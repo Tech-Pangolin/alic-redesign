@@ -34,3 +34,14 @@
     font-weight: 500;
   }
 }
+
+@layer components {
+  .mobile-nav-panel {
+    position: fixed;
+    inset-inline: 0;
+    top: var(--header-offset);
+    z-index: 50;
+    max-height: calc(100dvh - var(--header-offset));
+    overflow-y: auto;
+  }
+}

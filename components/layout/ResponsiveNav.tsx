@@ -64,7 +64,7 @@ export default function ResponsiveNav() {
                     <button type="button" aria-label="Close menu" className="fixed inset-0 z-40 bg-alic-navy/40" onClick={close} />
                     <nav
                         aria-label="Mobile"
-                        className="fixed inset-x-0 top-[var(--header-offset,5rem)] z-50 max-h-[calc(100dvh-var(--header-offset,5rem))] overflow-y-auto border-t border-alic-gold/20 bg-alic-cream px-4 pb-8 shadow-lg"
+                        className="mobile-nav-panel border-t border-alic-gold/20 bg-alic-cream px-4 pb-8 shadow-lg"
                     >
                         <ul>
                             {navItems.map((item) => (
