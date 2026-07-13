@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hedvig_Letters_Serif, IBM_Plex_Sans } from "next/font/google";
 import ResponsiveNav from "@/components/layout/ResponsiveNav";
 import "./globals.css";
+import SiteFooter from "@/components/layout/SiteFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans text-alic-navy">
         <ResponsiveNav />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
