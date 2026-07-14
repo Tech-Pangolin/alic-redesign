@@ -43,7 +43,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans text-alic-navy">
         <ResponsiveNav />
-        {children}
+        <main className="flex flex-col flex-1 w-full h-full items-center justify-center bg-foreground">
+            {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

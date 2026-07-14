@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SiteFooter() {
     return (
         <div className="bg-foreground">
-            <footer className="px-8 py-6 m-10 font-sans text-alic-navy flex justify-between items-center rounded-2xl bg-background md:flex-row flex-col">
+            <footer className="px-8 py-6 mx-10 mb-10 mt-5 font-sans text-alic-navy flex justify-between items-center rounded-2xl bg-background md:flex-row flex-col">
                 <div className="flex flex-col md:items-start items-center gap-4">
                     <div>
                         <Link href="/">

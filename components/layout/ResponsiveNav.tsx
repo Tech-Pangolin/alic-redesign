@@ -29,7 +29,7 @@ export default function ResponsiveNav() {
     }, [mobileOpen]);
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-transparent">
+        <header className="sticky top-0 z-50 w-full bg-background shadow-xl">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
                 <Link href="/" className="shrink-0" aria-label="Homepage">
                     <Image src="/alic-logo.svg" alt="ALIC Group" width={209} height={66} priority className="h-12 w-auto sm:h-[66px]" />
