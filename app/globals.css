@@ -16,6 +16,10 @@
   --font-sans: var(--font-ibm-plex-sans), var(--font-geist-sans), sans-serif;
   --font-serif: var(--font-hedvig-serif), serif;
   --font-mono: var(--font-geist-mono);
+  --text-lg: 73px;
+  --text-md: 42px;
+  --text-base: 28px;
+  --text-sm: 21px;
 }
 
 @layer base {
