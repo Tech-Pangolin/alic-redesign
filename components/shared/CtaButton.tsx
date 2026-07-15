@@ -16,7 +16,7 @@ export default function CtaButton({
     return (
         <Link
             href={href}
-            className={`inline-flex items-center justify-center gap-2 rounded-full bg-alic-gold px-5 py-2.5 text-center text-sm font-semibold text-alic-navy ${className ?? ""}`}
+            className={`inline-flex items-center justify-center gap-3 rounded-full bg-alic-gold px-[1.875rem] py-[0.9375rem] text-center text-[1.3125rem] font-semibold text-alic-navy ${className ?? ""}`}
             onClick={onClick}
         >
             {text}
