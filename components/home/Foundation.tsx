@@ -38,7 +38,7 @@ export default function Foundation() {
                         </p>
                     </div>
                     <Link href="#work" className={styles.cta}>
-                        See what drives us
+                        See What Drives Us
                         <span aria-hidden="true">↗</span>
                     </Link>
                 </div>

@@ -11309,3 +11309,485 @@ Overlap formulas were updated to maintain the same percentage overlaps with the 
 _**Agent (default)**_
 
 Story cards are now **400px** wide, and In Motion overlap positions were updated to match.
+
+---
+
+_**User**_
+
+Make the "See what drives us" buttons half the size.  Also in the hero component make the last button column take up about 1/3d as much space as it currently does and widen the first column to fill in that space
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The "See what drives us" buttons should be half their current size.
+
+In the Hero component, the last button column should shrink to roughly one-third of its current width. The first column should expand to fill that space.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "glob": "*.{tsx,css}",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign",
+  "pattern": "See what drives us|drives us"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign",
+  "pattern": "See what drives us|drives us",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "components\\home\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": "components\\home\\Foundation.tsx"
+    }
+  ],
+  "totalFiles": 2,
+  "totalMatches": 2
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The two "See what drives us" buttons currently share the same CTA sizing as other buttons.
+
+The buttons will be scaled to half their current size. The base CTA gap shrinks from 0.75rem to 0.375rem.
+
+The base CTA padding and font will halve too. The hero grid will shift from equal thirds to a wider first column and a narrower third.
+
+The hero grid will use `5fr 3fr 1fr`, giving the first column roughly 55% width and the third only 11%. Both the hero and Foundation CTA styles can be halved safely since only those buttons carry the label.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The "See what drives us" buttons will be halved in size. This applies to both the Hero and Foundation CTAs.
+
+The hero grid will be updated to 5fr 3fr 1fr. The last button column will shrink to one-third of its current width. The first column will expand to fill that space.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Realized the base mobile size is zero.
+
+The 0.65625rem result is too tiny. "Half the size" likely means halving the oversized large button rather than the original base size.
+
+Decided to halve the large desktop button size to 1.3125rem. The original mobile size would be too small.
+
+Revised the mobile approach. Halving the 1.5x mobile sizes would be too small. Using the original unscaled mobile values instead: 0.875rem font, 0.5rem gap, and 0.625rem padding. Large screen values remain unchanged.</details></think>
+
+_**Agent (default)**_
+
+Base mobile CTA size was too small after halving; adjusting it to a more usable size.
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The requested changes are complete. The "See what drives us" buttons are now half their previous size. The last button column in the hero component now takes up roughly one-third of its current space. The first column has been widened to fill the remaining space.</details></think>
+
+_**Agent (default)**_
+
+Done. “See what drives us” (Hero + Foundation) is **half** its previous size on large screens. Hero columns are now **5fr / 3fr / 1fr**, so the CTA column is about a third of its old width and the copy column takes the extra space.
+
+---
+
+_**User**_
+
+Make the "See what drives us" button the same size as the "Partner with Us" button.  Also, change "See what drives us" to "See What Drives Us" in both instances
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Matching the "See what drives us" button size to the "Partner with Us" CtaButton.
+
+Updating the button text to "See What Drives Us" in both Hero and Foundation sections. The Hero button keeps its animation and arrow while matching the CtaButton CSS values.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The CtaButton component defaults to "Partner With Us" with a capital W, while the Purpose section uses lowercase "Partner with us". This discrepancy needs to be resolved during the update.
+
+The CtaButton now matches the "Partner with Us" button size. ResponsiveNav uses the same component, so its button is also updated.</details></think>
+
+_**Agent (default)**_
+
+Both buttons now match the **Partner With Us** size, and the label is **“See What Drives Us”** in Hero and Foundation.
+
+---
+
+_**User**_
+
+Make the button column of the hero component take up .5 times the space horizontally
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The hero button column should take up half the horizontal space.
+
+The button column should shrink from 1fr to 0.5fr. The freed space should go to the first column.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The hero button column now takes up half the horizontal space.</details></think>
+
+_**Agent (default)**_
+
+Hero button column is now **half** its previous width (`0.5fr`), with the extra space added to the first column.
+
+---
+
+_**User**_
+
+undo that
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Reverting the hero grid change.
+
+Restoring `5fr 3fr 1fr` instead of `5fr 3fr 0.5fr`.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The change was reverted. A brief confirmation follows.</details></think>
+
+_**Agent (default)**_
+
+Reverted — hero columns are back to **5fr / 3fr / 1fr**.
+
+---
+
+_**User**_
+
+Change the hero columns to be 4fr/3fr/2fr
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Updating the hero grid columns to 4fr/3fr/2fr.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The hero columns have been updated to 4fr/3fr/2fr.</details></think>
+
+_**Agent (default)**_
+
+Hero columns are now **4fr / 3fr / 2fr**.
