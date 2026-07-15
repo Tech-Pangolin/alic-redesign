@@ -1,0 +1,128 @@
+.section {
+  padding-block: 4rem;
+  color: var(--color-alic-cream);
+  background-color: var(--color-alic-navy);
+  background-image: var(--alic-mesh-image);
+}
+
+.inner {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.intro {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-alic-gold);
+}
+
+.heading {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-alic-cream);
+}
+
+.list {
+  display: grid;
+  gap: 4rem;
+  margin: 3.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 42rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-alic-cream);
+}
+
+.body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--color-alic-cream) 85%, transparent);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-self: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  background: var(--color-alic-gold);
+  color: var(--color-alic-navy);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cta:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-block: 5rem;
+  }
+
+  .inner {
+    padding-inline: 1.5rem;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .list {
+    gap: 5rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+  }
+
+  .body {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 6rem;
+  }
+
+  .inner {
+    padding-inline: 2rem;
+  }
+}

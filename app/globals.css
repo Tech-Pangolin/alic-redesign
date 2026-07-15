@@ -2,17 +2,23 @@
 
 :root {
   --background: #fffef9;
-  --foreground: #101E45;
-  --header-offset: 5rem;
+  --foreground: #11224d;
+  --header-offset: 6.5rem;
+  --alic-mesh-image:
+    radial-gradient(circle farthest-corner at 6% 13%, #11224d 0%, rgba(17, 34, 77, 0) 70%),
+    radial-gradient(circle farthest-corner at 94% 11%, #091024 0%, rgba(9, 16, 36, 0) 70%),
+    radial-gradient(circle farthest-corner at 49% 50%, #11224d 0%, #11224d 100%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-alic-navy: #101E45;
-  --color-alic-gold: #CFA540;
+  --color-alic-navy: #11224d;
+  --color-alic-gold: #d0a540;
   --color-alic-cream: #fffef9;
   --color-alic-light: #f1f1f1;
+  --color-alic-warm: #efdbb1;
+  --color-alic-deep: #091024;
   --font-sans: var(--font-ibm-plex-sans), var(--font-geist-sans), sans-serif;
   --font-serif: var(--font-hedvig-serif), serif;
   --font-mono: var(--font-geist-mono);
