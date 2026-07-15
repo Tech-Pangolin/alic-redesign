@@ -1,29 +1,54 @@
-import Link from "next/link";
-import ImagePlaceholder from "@/components/home/ImagePlaceholder";
+import Image from "next/image";
+import CtaButton from "@/components/shared/CtaButton";
+import StoryCard from "@/components/shared/StoryCard";
 import styles from "./InMotion.module.css";
 
 const stories = [
     {
-        title: "Atlanta Life & Rajah Caruth",
-        subtitle: "NASCAR Daytona International Speedway",
-        label: "Story 1",
+        text: "Atlanta Life & Rajah Caruth\nNASCAR Daytona International Speedway",
+        href: "/newsroom",
+        image: "/inmotion/inmotion-nascar.png",
+        alt: "Atlanta Life and Rajah Caruth at NASCAR Daytona International Speedway",
+        layout: "nascar",
     },
     {
-        title: "Atlanta Life Hosts Author Tayari Jones – Exclusive Interview, Book Signing and Q&A",
-        subtitle: null,
-        label: "Story 2",
+        text: "Atlanta Life Hosts Author Tayari Jones – Exclusive Interview, Book Signing and Q&A",
+        href: "/newsroom",
+        image: "/inmotion/inmotion-3women.avif",
+        alt: "Atlanta Life Hosts Author Tayari Jones",
+        layout: "topRight",
     },
     {
-        title: "Atlanta Life at inaugural HBCU Aware Fest",
-        subtitle: null,
-        label: "Story 3",
+        text: "Atlanta Life Power Home Remodeling Financial Literacy Education Event",
+        href: "/newsroom",
+        image: "/inmotion/inmontion-speaker.avif",
+        alt: "Atlanta Life Power Home Remodeling Financial Literacy Education Event",
+        layout: "bottomLeft",
     },
     {
-        title: "Atlanta Life Power Home Remodeling Financial Literacy Education Event",
-        subtitle: null,
-        label: "Story 4",
+        text: "Atlanta Life at inaugural HBCU Aware Fest",
+        href: "/newsroom",
+        image: "/inmotion/inmotion-million.avif",
+        alt: "Atlanta Life at inaugural HBCU Aware Fest",
+        layout: "bottomRight",
     },
 ] as const;
+
+const imageSize = {
+    nascar: { width: 475, height: 405 },
+    topRight: { width: 360, height: 340 },
+    bottomLeft: { width: 400, height: 340 },
+    bottomRight: { width: 575, height: 340 },
+    default: { width: 900, height: 700 },
+} as const;
+
+const layoutClass = {
+    nascar: styles.cellNascar,
+    topRight: styles.cellTopRight,
+    bottomLeft: styles.cellBottomLeft,
+    bottomRight: styles.cellBottomRight,
+    default: "",
+} as const;
 
 export default function InMotion() {
     return (
@@ -42,25 +67,35 @@ export default function InMotion() {
 
                 <ul className={styles.grid}>
                     {stories.map((story) => (
-                        <li key={story.label} className={styles.card}>
-                            <ImagePlaceholder label={story.label} aspect="4/3" />
-                            <h3 className={styles.cardTitle}>{story.title}</h3>
-                            {story.subtitle ? (
-                                <p className={styles.cardSubtitle}>{story.subtitle}</p>
-                            ) : null}
-                            <Link href="#" className={styles.storyCta}>
-                                View story
-                                <span aria-hidden="true">→</span>
-                            </Link>
+                        <li
+                            key={story.image}
+                            className={`${styles.cell} ${layoutClass[story.layout]}`}
+                        >
+                            <div className={styles.featureStack}>
+                                <div className={styles.storyCardWrap}>
+                                    <StoryCard text={story.text} href={story.href} />
+                                </div>
+                                <div className={styles.photoWrap}>
+                                    <Image
+                                        src={story.image}
+                                        alt={story.alt}
+                                        width={imageSize[story.layout].width}
+                                        height={imageSize[story.layout].height}
+                                        className={styles.photo}
+                                    />
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
 
-                <p className={styles.newsroom}>
-                    <Link href="#" className={styles.newsroomLink}>
-                        Visit our newsroom for all stories
-                    </Link>
-                </p>
+                <div className={styles.newsroom}>
+                    <CtaButton
+                        text="Visit our newsroom for all stories"
+                        href="/newsroom"
+                        className={styles.newsroomCta}
+                    />
+                </div>
             </div>
         </section>
     );
