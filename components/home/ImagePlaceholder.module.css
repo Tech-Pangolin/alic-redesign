@@ -1,0 +1,39 @@
+.root {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: var(--color-alic-light);
+  text-align: center;
+  color: color-mix(in srgb, var(--color-alic-navy) 50%, transparent);
+}
+
+.warm {
+  background: color-mix(in srgb, var(--color-alic-warm) 30%, transparent);
+  color: color-mix(in srgb, var(--color-alic-cream) 60%, transparent);
+}
+
+.label {
+  padding-inline: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.ratio65 {
+  aspect-ratio: 6 / 5;
+}
+
+.ratio32 {
+  aspect-ratio: 3 / 2;
+}
+
+.ratio43 {
+  aspect-ratio: 4 / 3;
+}
+
+.ratio1610 {
+  aspect-ratio: 16 / 10;
+}
