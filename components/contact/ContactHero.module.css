@@ -1,0 +1,37 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  text-align: left;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-alic-navy);
+  animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+.body {
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-alic-navy);
+  animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+  animation-delay: 120ms;
+}
