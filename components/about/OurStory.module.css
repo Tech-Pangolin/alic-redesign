@@ -1,14 +1,3 @@
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(1.25rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .section {
   padding: 2.5rem 50px 3rem;
   color: var(--color-alic-navy);
@@ -24,7 +13,7 @@
 }
 
 .copy {
-  max-width: 34rem;
+  max-width: none;
 }
 
 .heading {
@@ -35,7 +24,6 @@
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--color-alic-navy);
-  animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
 }
 
 .body {
@@ -45,14 +33,10 @@
   font-weight: 400;
   line-height: 1.65;
   color: var(--color-alic-navy);
-  animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
-  animation-delay: 120ms;
 }
 
 .media {
   position: relative;
-  animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
-  animation-delay: 220ms;
 }
 
 .accent {
@@ -76,6 +60,21 @@
   border-radius: 1rem;
   object-fit: cover;
   aspect-ratio: 917 / 454;
+  transition: transform 0.4s ease;
+}
+
+.media:hover .image {
+  transform: translateY(-6px) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .media:hover .image {
+    transform: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -87,5 +86,9 @@
   .inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: 3rem;
+  }
+
+  .copy {
+    max-width: 34rem;
   }
 }

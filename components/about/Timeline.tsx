@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 import styles from "./Timeline.module.css";
 
 type ImageVariant = "portrait" | "banner" | "wide" | "tall" | "wideAlt";
@@ -76,12 +77,8 @@ const entries: TimelineEntry[] = [
 
 export default function Timeline() {
     return (
-        <section className={styles.section} aria-labelledby="timeline-label">
+        <section className={styles.section} aria-label="The founding">
             <div className={styles.inner}>
-                <p id="timeline-label" className={styles.label}>
-                    The founding
-                </p>
-
                 <ul className={styles.list}>
                     {entries.map((entry) => {
                         const variant = entry.variant
@@ -89,26 +86,34 @@ export default function Timeline() {
                             : undefined;
 
                         return (
-                        <li
-                            key={entry.year}
-                            className={`${styles.row} ${entry.imageLeft ? styles.imageLeft : styles.imageRight}`}
-                        >
-                            <div className={styles.media}>
-                                <Image
-                                    src={entry.image}
-                                    alt={entry.title}
-                                    width={variant?.width ?? 1200}
-                                    height={variant?.height ?? 800}
-                                    className={`${styles.image} ${variant?.className ?? ""}`}
-                                />
-                            </div>
+                            <li
+                                key={entry.year}
+                                className={`${styles.row} ${entry.imageLeft ? styles.imageLeft : styles.imageRight}`}
+                            >
+                                <div className={styles.media}>
+                                    <Reveal variant="image">
+                                        <Image
+                                            src={entry.image}
+                                            alt={entry.title}
+                                            width={variant?.width ?? 1200}
+                                            height={variant?.height ?? 800}
+                                            className={`${styles.image} ${variant?.className ?? ""}`}
+                                        />
+                                    </Reveal>
+                                </div>
 
-                            <div className={styles.copy}>
-                                <h3 className={styles.year}>{entry.year}</h3>
-                                <p className={styles.title}>{entry.title}</p>
-                                <p className={styles.body}>{entry.body}</p>
-                            </div>
-                        </li>
+                                <div className={styles.copy}>
+                                    <Reveal delay={100}>
+                                        <h3 className={styles.year}>{entry.year}</h3>
+                                    </Reveal>
+                                    <Reveal delay={200}>
+                                        <p className={styles.title}>{entry.title}</p>
+                                    </Reveal>
+                                    <Reveal delay={300}>
+                                        <p className={styles.body}>{entry.body}</p>
+                                    </Reveal>
+                                </div>
+                            </li>
                         );
                     })}
                 </ul>

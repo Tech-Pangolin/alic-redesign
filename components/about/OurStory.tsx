@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 import styles from "./OurStory.module.css";
 
 export default function OurStory() {
@@ -6,16 +7,20 @@ export default function OurStory() {
         <section className={styles.section} aria-labelledby="our-story-heading">
             <div className={styles.inner}>
                 <div className={styles.copy}>
-                    <h1 id="our-story-heading" className={styles.heading}>
-                        Our Story
-                    </h1>
-                    <p className={styles.body}>
-                        Every organization has a reason for being. Ours has never
-                        wavered.
-                    </p>
+                    <Reveal>
+                        <h1 id="our-story-heading" className={styles.heading}>
+                            Our Story
+                        </h1>
+                    </Reveal>
+                    <Reveal delay={120}>
+                        <p className={styles.body}>
+                            Every organization has a reason for being. Ours has never
+                            wavered.
+                        </p>
+                    </Reveal>
                 </div>
 
-                <div className={styles.media}>
+                <Reveal variant="image" delay={220} className={styles.media}>
                     <span className={styles.accent} aria-hidden="true" />
                     <Image
                         src="/about/ourStory.avif"
@@ -25,7 +30,7 @@ export default function OurStory() {
                         className={styles.image}
                         priority
                     />
-                </div>
+                </Reveal>
             </div>
         </section>
     );

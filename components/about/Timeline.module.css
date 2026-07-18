@@ -10,19 +10,6 @@
   width: 100%;
 }
 
-.label {
-  display: flex;
-  width: fit-content;
-  margin: 0 auto 2.5rem;
-  padding: 0.625rem 1.5rem;
-  border: 1px solid var(--color-alic-gold);
-  border-radius: 0.5rem;
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--color-alic-gold);
-}
-
 .list {
   display: grid;
   gap: 3.5rem;
@@ -32,15 +19,27 @@
 }
 
 .row {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: center;
 }
 
+/* Vertical connector line between timeline entries */
+.row + .row::before {
+  content: "";
+  position: absolute;
+  top: -3.5rem;
+  left: 50%;
+  width: 2px;
+  height: 3.5rem;
+  transform: translateX(-50%);
+  background: var(--color-alic-cream);
+}
+
 .media {
   width: 100%;
-  overflow: hidden;
   border-radius: 1rem;
 }
 
@@ -51,36 +50,40 @@
   border-radius: 1rem;
   object-fit: cover;
   aspect-ratio: 3 / 2;
+  transition: transform 0.4s ease;
+}
+
+.media:hover .image {
+  transform: translateY(-6px) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .media:hover .image {
+    transform: none;
+  }
 }
 
 .imagePortrait {
-  width: 86%;
-  max-width: 600px;
-  margin-left: 14%;
   aspect-ratio: 600 / 625;
 }
 
 .imageBanner {
-  width: calc(100% - 220px);
-  max-width: 600px;
-  margin-left: 220px;
   aspect-ratio: 600 / 750;
 }
 
 .imageWide {
-  max-width: 840px;
   aspect-ratio: 840 / 640;
 }
 
 .imageTall {
-  width: calc(100% - 430px);
-  max-width: 450px;
-  margin-left: 430px;
   aspect-ratio: 450 / 750;
 }
 
 .imageWideAlt {
-  max-width: 837px;
   aspect-ratio: 837 / 639;
 }
 
@@ -123,6 +126,11 @@
   .list {
     gap: 4rem;
   }
+
+  .row + .row::before {
+    top: -4rem;
+    height: 4rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -130,17 +138,54 @@
     padding: 4.5rem 50px 5.5rem;
   }
 
-  .label {
-    margin-bottom: 3.5rem;
-  }
-
   .list {
     gap: 5rem;
+  }
+
+  .row + .row::before {
+    top: -5rem;
+    height: 5rem;
+  }
+
+  /* Align the connector with the text column (accounting for the 3rem grid gap) */
+  .imageLeft + .row::before {
+    left: calc(75% + 0.75rem);
+  }
+
+  .imageRight + .row::before {
+    left: calc(25% - 0.75rem);
   }
 
   .row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 3rem;
+  }
+
+  /* Custom image sizing and offsets apply on desktop only */
+  .imagePortrait {
+    width: 86%;
+    max-width: 600px;
+    margin-left: 14%;
+  }
+
+  .imageBanner {
+    width: calc(100% - 220px);
+    max-width: 600px;
+    margin-left: 220px;
+  }
+
+  .imageWide {
+    max-width: 840px;
+  }
+
+  .imageTall {
+    width: calc(100% - 430px);
+    max-width: 450px;
+    margin-left: 430px;
+  }
+
+  .imageWideAlt {
+    max-width: 837px;
   }
 
   .imageLeft .media {

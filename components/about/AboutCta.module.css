@@ -35,6 +35,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   margin-top: 2rem;
   padding: 0.9375rem 1.75rem;
   border-radius: 9999px;
@@ -51,18 +52,79 @@
   opacity: 0.9;
 }
 
-.media {
+.arc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   margin-top: 2.5rem;
-  overflow: hidden;
-  border-radius: 1.5rem;
 }
 
-.image {
+.arcItem {
+  width: 100%;
+}
+
+.arcImage {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 1rem;
   object-fit: cover;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.4s ease;
+}
+
+.arcItem:hover .arcImage {
+  transform: translateY(-6px) scale(1.02);
+}
+
+@media (min-width: 1024px) {
+  .arc {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 110px;
+  }
+
+  .arcItem {
+    flex: 0 1 300px;
+    min-width: 0;
+    width: auto;
+  }
+
+  .arcImage {
+    max-width: 300px;
+  }
+
+  /* U-shaped arc: outer images highest and tilted inward, center lowest */
+  .arcItem:nth-child(1) {
+    transform: rotate(10deg);
+  }
+
+  .arcItem:nth-child(2) {
+    transform: translateY(70px) rotate(5deg);
+  }
+
+  .arcItem:nth-child(3) {
+    transform: translateY(100px);
+  }
+
+  .arcItem:nth-child(4) {
+    transform: translateY(70px) rotate(-5deg);
+  }
+
+  .arcItem:nth-child(5) {
+    transform: rotate(-10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arcImage {
+    transition: none;
+  }
+
+  .arcItem:hover .arcImage {
+    transform: none;
+  }
 }
 
 @media (min-width: 900px) {
