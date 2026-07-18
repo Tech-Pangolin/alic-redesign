@@ -1,0 +1,134 @@
+.section {
+  padding: 3.5rem 50px 4rem;
+  color: var(--color-alic-cream);
+  background-color: var(--color-alic-navy);
+  background-image: var(--alic-mesh-image);
+  box-sizing: border-box;
+}
+
+.inner {
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 2.5rem;
+  padding: 0.625rem 1.5rem;
+  border: 1px solid var(--color-alic-gold);
+  border-radius: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-alic-gold);
+}
+
+.list {
+  display: grid;
+  gap: 3.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.media {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.year {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-alic-cream);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-alic-cream);
+}
+
+.body {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--color-alic-cream) 85%, transparent);
+}
+
+@media (min-width: 640px) {
+  .list {
+    gap: 4rem;
+  }
+
+  .body {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 4.5rem 50px 5.5rem;
+  }
+
+  .label {
+    margin-bottom: 3.5rem;
+  }
+
+  .list {
+    gap: 5rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .imageLeft .media {
+    order: 1;
+  }
+
+  .imageLeft .copy {
+    order: 2;
+  }
+
+  .imageRight .media {
+    order: 2;
+  }
+
+  .imageRight .copy {
+    order: 1;
+  }
+}

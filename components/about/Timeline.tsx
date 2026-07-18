@@ -1,0 +1,84 @@
+import Image from "next/image";
+import styles from "./Timeline.module.css";
+
+const entries = [
+    {
+        year: "1858",
+        title: "Alonzo Franklin Herndon is born",
+        body: "Alonzo Franklin Herndon is born on June 26, 1858, in Walton County, Georgia. He is emancipated at the end of the Civil War.",
+        image: "/about/alonzo-herndon.avif",
+        imageLeft: true,
+    },
+    {
+        year: "1870s – 1890s",
+        title: "Building a fortune in Atlanta",
+        body: "Herndon learns the barbering trade and relocates to Atlanta, where he builds one of the most successful barbering enterprises in the city — eventually owning three barbershops, including a renowned establishment at 66 Peachtree Street. He invests his earnings in Atlanta real estate and becomes the wealthiest African American in the city and the first African American millionaire in the south.",
+        image: "/about/crystal-palace.avif",
+        imageLeft: false,
+    },
+    {
+        year: "1905",
+        title: "Atlanta Life is founded",
+        body: "African American families in the United States did not have access to life insurance and financial services from established institutions at the time. Recognizing that need, Herndon acquires the Atlanta Benevolent and Protective Association for $140, consolidates it with two additional organizations, and on September 21, 1905, formally establishes the Atlanta Mutual Insurance Association — the company that would become Atlanta Life Insurance Company.",
+        image: "/about/atlanta-life-insurance-company.avif",
+        imageLeft: true,
+    },
+    {
+        year: "1922",
+        title: "Atlanta Life Insurance Company",
+        body: "The company is reincorporated as the Atlanta Life Insurance Company — one of only five Black-owned insurance companies in the nation to hold legal reserve status at the time.",
+        image: "/about/atlanta-life-insurance-salesmen.avif",
+        imageLeft: false,
+    },
+    {
+        year: "1927 – 1952",
+        title: "Norris B. Herndon carries the legacy forward",
+        body: "Upon Alonzo's passing in 1927, his son Norris B. Herndon — a Harvard MBA graduate — assumes leadership. Under his stewardship Atlanta Life continues to grow. In 1952, Norris establishes the Alonzo F. and Norris B. Herndon Foundation, dedicated to education, mentorship, and entrepreneurship. The Foundation has since contributed more than five million dollars to churches, nonprofits, and educational institutions.",
+        image: "/about/Norris-Bumstead-Herndon.avif",
+        imageLeft: true,
+    },
+    {
+        year: "2023",
+        title: "A new chapter. The same conviction.",
+        body: "Atlanta Life Insurance Company was acquired by Atlanta Life Holdings — a minority-owned insurance holding company — and reentered the market with renewed leadership, restored focus, and the same founding mission that has guided this organization since 1905. With the partnership of Earvin \"Magic\" Johnson and his EquiTrust Life Insurance Company, Atlanta Life stepped forward with expanded resources and a clear commitment to building on what the Herndon family began. The mission remains unchanged. The momentum is new.",
+        image: "/about/a-new-chapter.avif",
+        imageLeft: false,
+    },
+] as const;
+
+export default function Timeline() {
+    return (
+        <section className={styles.section} aria-labelledby="timeline-label">
+            <div className={styles.inner}>
+                <p id="timeline-label" className={styles.label}>
+                    The founding
+                </p>
+
+                <ul className={styles.list}>
+                    {entries.map((entry) => (
+                        <li
+                            key={entry.year}
+                            className={`${styles.row} ${entry.imageLeft ? styles.imageLeft : styles.imageRight}`}
+                        >
+                            <div className={styles.media}>
+                                <Image
+                                    src={entry.image}
+                                    alt={entry.title}
+                                    width={1200}
+                                    height={800}
+                                    className={styles.image}
+                                />
+                            </div>
+
+                            <div className={styles.copy}>
+                                <h3 className={styles.year}>{entry.year}</h3>
+                                <p className={styles.title}>{entry.title}</p>
+                                <p className={styles.body}>{entry.body}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+    );
+}
