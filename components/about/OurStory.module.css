@@ -10,18 +10,10 @@
 }
 
 .section {
-  padding: 0 50px 3rem;
+  padding: 2.5rem 50px 3rem;
   color: var(--color-alic-navy);
   background: var(--color-alic-cream);
   box-sizing: border-box;
-}
-
-.accentBar {
-  width: 100%;
-  height: 1.25rem;
-  margin-bottom: 2.5rem;
-  border-radius: 0 0 1rem 1rem;
-  background: var(--color-alic-gold);
 }
 
 .inner {
@@ -58,27 +50,38 @@
 }
 
 .media {
-  overflow: hidden;
-  border-radius: 1rem;
+  position: relative;
   animation: fadeUp 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) both;
   animation-delay: 220ms;
 }
 
+.accent {
+  position: absolute;
+  bottom: -2.5rem;
+  left: -2.5rem;
+  z-index: 0;
+  width: 13.5rem;
+  height: 13.5rem;
+  border-radius: 12px;
+  background: var(--color-alic-gold);
+}
+
 .image {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
+  max-width: 917px;
   height: auto;
+  border-radius: 1rem;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 917 / 454;
 }
 
 @media (min-width: 900px) {
   .section {
+    padding-top: 3.25rem;
     padding-bottom: 4.5rem;
-  }
-
-  .accentBar {
-    margin-bottom: 3.25rem;
   }
 
   .inner {
