@@ -1331,3 +1331,920 @@ Status: **completed**
 <summary>Tool use: **todo_write**</summary>
 
 </details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The typecheck passed. I'll outline the next steps.
+
+Copy `.env.example` to `.env.local` and paste the private key. Restart the dev server. Update the plan file todos if needed.</details></think>
+
+_**Agent (default)**_
+
+The contact → Google Sheets flow is in place.
+
+**Added**
+- [`lib/google-sheets.ts`](lib/google-sheets.ts) — appends a row via the service account
+- [`lib/contact.ts`](lib/contact.ts) — validation + CORS allowlist helpers
+- [`app/api/contact/route.ts`](app/api/contact/route.ts) — `POST` / `OPTIONS` endpoint
+- Form fields are now **Name / Email / Subject / Message**, posting to `/api/contact`
+- [`.env.example`](.env.example) — template for env vars
+
+**Your next step — create `.env.local`** (restart `npm run dev` after):
+
+```env
+GOOGLE_SHEET_ID=1HPL3nS70SSLq5ZFcD1bv4syKRTg-VN_YIslIyJzngK0
+GOOGLE_SERVICE_ACCOUNT_EMAIL=alic-sheets@alic-503016.iam.gserviceaccount.com
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+CONTACT_ALLOWED_ORIGINS=https://atllifeinsurance.com,https://www.atllifeinsurance.com,http://localhost:3000
+```
+
+Use the **rotated** private key from your new JSON download (not the one pasted in chat). Keep the `\n` escapes inside the quotes.
+
+Then open `/contact`, submit a test message, and confirm a new row in the sheet.
+
+On Vercel, set the same env vars and redeploy. Atlanta Life can `POST` JSON `{ name, email, subject, message }` to `https://YOUR-HOST/api/contact`.
+
+---
+
+_**User**_
+
+Can you give the homepage the same css animations as the abou tpage?
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The homepage will receive the same CSS animations as the about page.
+
+I'll compare the animations on both pages.</details></think>
+
+_**Agent (default)**_
+
+I'll compare the about and home page animation styles so we can match them.
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="task_v2">
+<details>
+<summary>Tool use: **task_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "description": "Compare home vs about animations",
+  "model": "composer-2.5-fast",
+  "name": "explore",
+  "prompt": "Compare CSS animations between the homepage and about page in c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign.\n\nFind:\n1. About page components and their animation CSS (keyframes, animation properties, delays)\n2. Homepage components and their animation CSS\n3. Exact differences — what about has that home lacks\n\nReturn specific file paths, class names, and the animation CSS snippets so they can be matched. Be thorough but concise.",
+  "subagentType": "explore"
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success",
+  "subagentComposerId": "8b573c67-8b9c-49eb-9d14-975602cfcb6f",
+  "terminationReason": "completed"
+}
+```
+Result:
+
+```json
+{
+  "agentId": "8b573c67-8b9c-49eb-9d14-975602cfcb6f"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="task_v2"><details>
+<summary>Tool use: **task_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Homepage sections will be wrapped with the Reveal component to match the about page's CSS animations.
+
+Reviewing the about and homepage components to ensure consistent Reveal usage.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\ui\Reveal.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\OurStory.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Work.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Purpose.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Checking Timeline, HistoryIntro, AboutCta, and Hero for animation patterns to replicate on the homepage.
+
+Deciding whether to migrate Hero to Reveal while keeping its keyframes.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\Timeline.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\AboutCta.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Work.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Homepage sections will be wrapped with Reveal components to match the about page animation patterns.
+
+The hero will drop its keyframe CSS for Reveal fadeUp and image variants. Foundation gets side-image reveals with delayed text. Work rows will stagger image, title, body, and CTA reveals. InMotion stories will use staggered image variants. Purpose will use delayed heading, body, and action delays.
+
+The hero will trigger immediately on page load since it sits above the fold. Reveal will wrap directly around elements, following the OurStory pattern where media classes attach to the wrapper itself. Foundation columns will use staggered delays: 0ms for the image and title, 120ms for copy paragraphs, 220ms for the CTA, and 320ms for the third column image.
+
+Work row reveals will use a 100ms title delay, 200ms body delay, and 220–300ms CTA delay. Work hover styles will be aligned with the about page. Hero keyframe animations will be removed from the title, body, CTA, and second column. Foundation image hover effects may also be added to match the about page.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\Timeline.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\home",
+  "pattern": "media:hover|\\.image \\{"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\home",
+  "pattern": "media:hover|\\.image \\{",
+  "topFiles": [
+    {
+      "matchCount": 2,
+      "uri": "components\\home\\Foundation.module.css"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components\\home\\Work.module.css"
+    }
+  ],
+  "totalFiles": 2,
+  "totalMatches": 4
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Reveal animations will be added to all homepage components. The Hero keyframes will be cleaned up.
+
+Work hover alignment and Foundation image hover effects will be added. Reduced-motion support is handled by Reveal. The Hero column two image will be wrapped in a Reveal component.</details></think>
+
+_**Agent (default)**_
+
+Wiring the shared `Reveal` component into each homepage section to match the about page.
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Hero.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Work.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Purpose.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Work.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\Foundation.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The media element uses a Foundation class in the original code. Reveal now applies a CSS module className instead.
+
+Reveal.module.css `.root` may conflict with display properties. OurStory keeps the same media class pattern, so Foundation should work unchanged. Reveal defaults to block, but OurStory handles this similarly. Wrapping featureStack in Reveal inside the grid cell should be fine if the stack fills the width.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\ui\Reveal.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\home"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\home"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The Reveal wrapper around InMotion grid cells may need `width: 100%` to match the About page animations.
+
+The Reveal root carries the animation class, so Foundation media display settings remain intact. The homepage now matches the About page CSS animations.</details></think>
+
+_**Agent (default)**_
+
+Homepage sections now use the same scroll-triggered `Reveal` system as the about page.
+
+**What changed**
+- **Hero** — switched from load-only keyframes to `Reveal` (fade-up copy + image variant)
+- **Foundation / Work / InMotion / Purpose** — staggered `Reveal` on headings, copy, CTAs, and images
+- **Work & Foundation** — image hover matched to about (`translateY(-6px) scale(1.02)`), with reduced-motion support
+
+Scroll the homepage and you should see the same fade-up / image entrance pattern as `/about`.
+
+---
+
+_**User**_
+
+On the homepage in the in motion section.  Can you align the contents of the bottom right column to the right side of the page?
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Aligning the bottom right column in the InMotion section to the right edge of the page.
+
+Checking the InMotion CSS and component structure.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The bottom right column currently uses `align-items: flex-start`, which left-aligns its contents. Changing this property will align the column to the right side of the page.
+
+The bottom left column already uses `align-items: flex-end` and `margin-right: 40px` for its feature stack. The bottom right column should mirror this pattern. The story card may also need repositioning relative to the right-aligned photo.
+
+The Reveal wrapper matches the 575px featureStack width, so switching to `align-items: flex-end` will push the entire block to the right edge.
+
+Reveal defaults to full width, so `align-items: flex-end` on the cell will not push the contents to the right. The Reveal element needs `width: fit-content` or `align-self: flex-end` to shrink-wrap and align properly.
+
+The cleaner approach is to keep the cell's `align-items: flex-end` and apply `margin-left: auto` to the featureStack itself. This mirrors the existing bottom-left pattern and avoids adjusting the Reveal wrapper.
+
+The absolutely positioned photo and story card sit inside the 575px featureStack. They will remain correctly aligned once the stack shifts to the right.</details></think>
+
+_**Agent (default)**_
+
+Pushing the bottom-right In Motion stack to the right edge of its column.
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The reveal wrapper is full-width. A left margin on the inner feature stack should push it to the right edge.</details></think>
+
+_**Agent (default)**_
+
+Updated the bottom-right In Motion cell so the photo and story card sit flush to the right of that column (`align-items: flex-end` + `margin-left: auto` on the stack).
+
+---
+
+_**User**_
+
+Great, can you increase the right margin in that section by 100pc?
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The right margin in the In Motion section needs to increase by 100 pixels.
+
+"100pc" likely means 100px. The bottom right feature stack probably needs a 100px right margin. Alternatively the whole In Motion section could get 100px right padding.
+
+The bottom-right feature stack will get a 100px right margin. This sits inside the existing 40px section padding.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\InMotion.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Added a 100px right margin to the bottom right stack.</details></think>
+
+_**Agent (default)**_
+
+Added `100px` of right margin to that bottom-right stack so it sits inset from the edge.
+
+---
+
+_**User**_
+
+on the about page, can you make the vertical white lines between each timeline entry twice their current height?
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+I need to double the height of the vertical white lines between timeline entries on the about page.
+
+Searching for the relevant CSS.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "glob": "**/Timeline*",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\about",
+  "pattern": "line|connector|divider|::before|::after|border"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components\\about",
+  "pattern": "line|connector|divider|::before|::after|border",
+  "topFiles": [
+    {
+      "matchCount": 4,
+      "uri": "components\\about\\Timeline.tsx"
+    },
+    {
+      "matchCount": 4,
+      "uri": "components/about/Timeline.tsx"
+    },
+    {
+      "matchCount": 13,
+      "uri": "components/about/Timeline.module.css"
+    },
+    {
+      "matchCount": 13,
+      "uri": "components\\about\\Timeline.module.css"
+    }
+  ],
+  "totalFiles": 4,
+  "totalMatches": 34
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Checking Timeline.module.css for the connector line height values.</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\Timeline.module.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The vertical lines currently match the row gap. They will be doubled.
+
+The line height will be doubled. Its top offset will stay the same, so the lines will extend into the row content rather than the gap.
+
+The list gap and top offset will also be doubled. This keeps the connectors spanning the full gap at twice their original length.</details></think>
+
+_**Agent (default)**_
+
+Doubling the connector line heights and the gaps between timeline rows so the lines still span cleanly between entries.
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\Timeline.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\about\Timeline.module.css</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+Doubled the vertical white line heights on the about page. Connector gaps were adjusted at all breakpoints so the lines still fill the space between timeline entries.</details></think>
+
+_**Agent (default)**_
+
+Done. The timeline connectors are now twice as tall (7rem / 8rem / 10rem by breakpoint), and the spacing between entries is doubled to match so the lines still span cleanly between them.
+
+---
+
+_**User**_
+
+Can you make the timeline connectors start 30px below the previous rows text and end 30px above the next rows text?  Confirm your understanding before you implement
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+I will confirm my understanding before implementing the requested changes.
+
+Clarifying whether "text" means only the copy column or the entire row including images.
+
+The connector aligns with the text column. The line currently spans the full gap between rows. I will add 30px of clearance below the previous entry's text and 30px above the next entry's text.
+
+Images may be taller than text, so the copy block bottom and top do not match row box edges. The 30px gaps should anchor to the copy block rather than the full row height.</details></think>
+
+_**Agent (default)**_
+
+Here’s my understanding before changing anything:
+
+**Intent:** The white vertical connectors should **not** fill the whole gap between timeline rows. They should leave **30px of open space** after the previous entry’s text and **30px of open space** before the next entry’s text.
+
+**Specifically:**
+- **Start:** 30px below the bottom of the previous row’s **copy** (year / title / body), not necessarily the bottom of the image
+- **End:** 30px above the top of the next row’s **copy**
+- The line itself is whatever height remains between those two points (so overall row spacing can stay as-is; only where the line sits/length changes)
+
+**Assumption:** “Text” means the text column (`.copy`), not the photo. On desktop the connector already lines up with that column.
+
+If that’s right, say go ahead and I’ll implement it. If you meant 30px from the whole row (image + text) instead, say that and I’ll do that instead.
+
+---
+
+_**User**_
+
+yes, that's right
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The user confirmed my understanding.
+
+Connector positioning is tricky because row heights depend on the taller image column. Two options are being considered: placing the connector near the copy element, or adding a dedicated connector element between rows.
+
+A third option is calculating the gap based on copy position alone. Using `::after` on each `.copy` element would not work because the next copy's position is unknown. The structure appears to be rows with copy content separated by gaps.
+
+Pure CSS on the rows fails because the row top follows the image height, not the text. The connector should instead be attached directly to the `.copy` elements using `::after`.
+
+Pure CSS cannot handle the variable spacing between entries because image heights differ. An explicit connector element in the markup or JavaScript measurement is needed.
+
+The connector should sit as a sibling between list items, placed after each copy block in the DOM. The current two-column grid layout places copy and media side by side, which complicates positioning the connector between them.
+
+The connector could be a third grid item spanning both columns, placed after each row. It would sit below the media and copy blocks. The remaining problem is determining its height, since the next copy's position is still unknown.</details></think>

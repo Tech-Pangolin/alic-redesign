@@ -58,7 +58,17 @@
 }
 
 .media:hover .image {
-  transform: scale(1.05);
+  transform: translateY(-6px) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .media:hover .image {
+    transform: none;
+  }
 }
 
 .copy {

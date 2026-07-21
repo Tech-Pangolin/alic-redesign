@@ -10,9 +10,13 @@
   width: 100%;
 }
 
+.listWrap {
+  position: relative;
+}
+
 .list {
   display: grid;
-  gap: 3.5rem;
+  gap: 7rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -26,16 +30,13 @@
   align-items: center;
 }
 
-/* Vertical connector line between timeline entries */
-.row + .row::before {
-  content: "";
+.connector {
   position: absolute;
-  top: -3.5rem;
-  left: 50%;
+  z-index: 0;
   width: 2px;
-  height: 3.5rem;
   transform: translateX(-50%);
   background: var(--color-alic-cream);
+  pointer-events: none;
 }
 
 .media {
@@ -124,12 +125,7 @@
 
 @media (min-width: 640px) {
   .list {
-    gap: 4rem;
-  }
-
-  .row + .row::before {
-    top: -4rem;
-    height: 4rem;
+    gap: 8rem;
   }
 }
 
@@ -139,21 +135,7 @@
   }
 
   .list {
-    gap: 5rem;
-  }
-
-  .row + .row::before {
-    top: -5rem;
-    height: 5rem;
-  }
-
-  /* Align the connector with the text column (accounting for the 3rem grid gap) */
-  .imageLeft + .row::before {
-    left: calc(75% + 0.75rem);
-  }
-
-  .imageRight + .row::before {
-    left: calc(25% - 0.75rem);
+    gap: 10rem;
   }
 
   .row {

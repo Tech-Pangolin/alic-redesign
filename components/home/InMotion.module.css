@@ -245,7 +245,7 @@
   .cellBottomRight {
     /* Pull up so the photo sits 10px below the top-right story card */
     margin-top: calc(10px - (36rem - (340px * 0.9 - 50px + 215px)) - 3rem);
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .cellBottomRight .featureStack {
@@ -253,6 +253,8 @@
     height: 340px;
     max-width: none;
     min-height: 0;
+    margin-left: auto;
+    margin-right: 100px;
   }
 
   .cellBottomRight .photoWrap {

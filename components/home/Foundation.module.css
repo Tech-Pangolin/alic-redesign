@@ -57,6 +57,21 @@
   height: auto;
   border-radius: 12px;
   object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.media:hover .image {
+  transform: translateY(-6px) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .media:hover .image {
+    transform: none;
+  }
 }
 
 .column2 {
