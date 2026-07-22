@@ -19,9 +19,9 @@
   --color-alic-light: #f1f1f1;
   --color-alic-warm: #efdbb1;
   --color-alic-deep: #091024;
-  --font-sans: var(--font-ibm-plex-sans), var(--font-geist-sans), sans-serif;
-  --font-serif: var(--font-hedvig-serif), serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-commissioner), sans-serif;
+  --font-serif: var(--font-mackinac), serif;
+  --font-mono: var(--font-dm-mono), monospace;
 }
 
 @layer base {

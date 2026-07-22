@@ -1,15 +1,39 @@
+"use client";
+
 import { assets } from "@/lib/assets";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const DARK_FOOTER_ROUTES = ["/solutions/livebalanced-studio"];
 
 export default function SiteFooter() {
+    const pathname = usePathname();
+    const dark = DARK_FOOTER_ROUTES.some(
+        (route) => pathname === route || pathname.startsWith(`${route}/`),
+    );
+
+    const outerClass = dark ? "bg-alic-deep" : "bg-foreground";
+    const cardClass = dark
+        ? "bg-alic-navy text-alic-cream"
+        : "bg-background text-alic-navy";
+
     return (
-        <div className="bg-foreground">
-            <footer className="px-8 py-6 m-10 font-sans text-alic-navy flex justify-between items-center rounded-2xl bg-background md:flex-row flex-col">
+        <div className={outerClass}>
+            <footer
+                className={`px-8 py-6 m-10 font-sans flex justify-between items-center rounded-2xl md:flex-row flex-col ${cardClass}`}
+            >
                 <div className="flex flex-col md:items-start items-center gap-4">
                     <div>
                         <Link href="/">
-                            <Image src={assets.logo.src} alt={assets.logo.alt} width={assets.logo.width} height={assets.logo.height} priority className="h-12 w-auto sm:h-[66px]" />
+                            <Image
+                                src={assets.logo.src}
+                                alt={assets.logo.alt}
+                                width={assets.logo.width}
+                                height={assets.logo.height}
+                                priority
+                                className="h-12 w-auto sm:h-[66px]"
+                            />
                         </Link>
                     </div>
                     <div>
@@ -20,16 +44,21 @@ export default function SiteFooter() {
                 </div>
                 <div className="my-4">
                     <ul className="flex items-center gap-4">
-                        {Object.values(assets.social).map(img => {
+                        {Object.values(assets.social).map((img) => {
                             return (
                                 <li key={img.alt}>
                                     <div style={{ width: 42, height: 42 }}>
-                                        <Image src={img.src} alt={img.alt} width={img.width} height={img.height} className="w-full h-full" />
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt}
+                                            width={img.width}
+                                            height={img.height}
+                                            className="w-full h-full"
+                                        />
                                     </div>
                                 </li>
-                            )
+                            );
                         })}
-
                     </ul>
                 </div>
             </footer>
