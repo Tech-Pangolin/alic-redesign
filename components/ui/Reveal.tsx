@@ -32,6 +32,7 @@ export default function Reveal({
         if (!node) return;
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect -- reduced-motion users skip the scroll animation and show content immediately
             setInView(true);
             return;
         }

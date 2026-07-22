@@ -1,7 +1,5 @@
-export default function NewsroomPage() {
-    return (
-        <main className="flex flex-1 items-center justify-center px-6 py-24">
-            <h1 className="font-sans text-3xl font-semibold text-alic-navy">Newsroom</h1>
-        </main>
-    );
+import { redirect } from "next/navigation";
+
+export default function NewsroomIndex() {
+  redirect("/about/community-impact");
 }
