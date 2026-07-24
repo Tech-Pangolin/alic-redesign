@@ -23,7 +23,7 @@ export default function Purpose() {
         <Reveal delay={220}>
           <div className={styles.actions}>
             <CtaButton text="Partner with us" />
-            <Link href="/about" className={styles.secondaryCta}>
+            <Link href="/about/our-story" className={styles.secondaryCta}>
               Learn how it works
               <span aria-hidden="true">→</span>
             </Link>

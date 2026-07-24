@@ -40,7 +40,7 @@ const offerings = [
     title: "Community Engagement",
     body: "Through purposeful initiatives, strategic partnerships, and ongoing investment in the communities we serve, we honor the founding conviction that has guided Atlanta Life from the beginning.",
     cta: "See our impact",
-    href: "/about",
+    href: "/about/community-impact",
     image: "/work/ourWork5.jpg",
     imageLeft: true,
   },

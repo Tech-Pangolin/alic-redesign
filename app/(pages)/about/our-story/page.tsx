@@ -20,111 +20,85 @@ export default function OurStoryPage() {
 
       <section className="mx-auto w-full max-w-screen-2xl py-16 md:py-20">
         <Collapsible id="herndons-vision" title="Herndon's Vision">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)_minmax(0,0.9fr)] lg:gap-10">
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/about/alonzo-herndon.avif"
-                alt="Alonzo Franklin Herndon"
-                width={600}
-                height={625}
-                className="aspect-[600/625] h-auto w-full rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-              />
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
+            <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
+              <p>
+                Our story begins with Alonzo Franklin Herndon — born on June 26,
+                1858, in Walton County, Georgia. Emancipated at the end of the
+                Civil War, Herndon built his future through skill, discipline, and
+                an extraordinary business instinct.
+              </p>
+              <p>
+                He entered the barbering trade and eventually settled in Atlanta,
+                where he built one of the most successful barbering enterprises in
+                the city — owning three barbershops, including a celebrated
+                establishment at 66 Peachtree Street that served some of
+                Atlanta&rsquo;s most prominent clientele. He invested his earnings
+                wisely in Atlanta real estate, accumulating wealth at a scale that
+                had never been achieved by a Black man in the city&rsquo;s history.
+                Alonzo Herndon became Atlanta&rsquo;s first Black millionaire.
+              </p>
+              <p>
+                But his ambition extended beyond personal success. Herndon
+                understood the value of financial security and what it meant for a
+                family to have something to protect, something to build on, and
+                something to leave behind. That understanding — more than anything
+                else — is what gave rise to Atlanta Life.
+              </p>
             </div>
 
-            <div className="flex flex-col gap-8">
-              <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
-                <p>
-                  Our story begins with Alonzo Franklin Herndon — born on June 26,
-                  1858, in Walton County, Georgia. Emancipated at the end of the
-                  Civil War, Herndon built his future through skill, discipline, and
-                  an extraordinary business instinct.
-                </p>
-                <p>
-                  He entered the barbering trade and eventually settled in Atlanta,
-                  where he built one of the most successful barbering enterprises in
-                  the city — owning three barbershops, including a celebrated
-                  establishment at 66 Peachtree Street that served some of
-                  Atlanta&rsquo;s most prominent clientele. He invested his earnings
-                  wisely in Atlanta real estate, accumulating wealth at a scale that
-                  had never been achieved by a Black man in the city&rsquo;s history.
-                  Alonzo Herndon became Atlanta&rsquo;s first Black millionaire.
-                </p>
-                <p>
-                  But his ambition extended beyond personal success. Herndon
-                  understood the value of financial security and what it meant for a
-                  family to have something to protect, something to build on, and
-                  something to leave behind. That understanding — more than anything
-                  else — is what gave rise to Atlanta Life.
-                </p>
+            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
+              <div className="relative row-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/alonzo-herndon.avif"
+                  alt="Alonzo Franklin Herndon"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 30vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
               </div>
-              <div className="overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/crystal-palace.png"
+                  alt="Crystal Palace barbershop"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 18vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
                 <Image
                   src="/about/herndon-barbershop-crystal-palace.png"
                   alt="Herndon barbershop at the Crystal Palace"
-                  width={840}
-                  height={640}
-                  className="aspect-[840/640] h-auto w-full rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 18vw"
+                  className="object-cover object-top transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/about/crystal-palace.png"
-                alt="Crystal Palace barbershop"
-                width={600}
-                height={750}
-                className="aspect-[600/750] h-auto w-full rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-              />
             </div>
           </div>
         </Collapsible>
 
         <Collapsible id="the-founding-1905" title="The Founding 1905">
-          <div className="flex flex-col gap-8">
-            <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)_minmax(0,0.9fr)] lg:gap-10">
-              <div className="relative aspect-[840/640] overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/atlanta-life-insurance-salesmen.jpg"
-                  alt="Atlanta Life Insurance salesmen"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 28vw"
-                  className="rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-
-              <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
-                <p>
-                  In 1905, Herndon was approached by prominent community leaders —
-                  among them Reverend Peter Bryant of Wheat Street Baptist Church —
-                  to take over a financially struggling community self-help
-                  organization called the Atlanta Benevolent and Protective
-                  Association. At the time, African American families in the United
-                  States did not have access to life insurance and financial
-                  services through established institutions.
-                </p>
-                <p>
-                  Herndon stepped in. He purchased the association for $140,
-                  deposited $5,000 with the state of Georgia — becoming the first
-                  company in the state to meet the new regulatory capital
-                  requirement — and subsequently acquired two additional
-                  organizations: the Royal Mutual Insurance Company and the National
-                  Laborers&rsquo; Protective Union.
-                </p>
-              </div>
-
-              <div className="relative aspect-[840/640] overflow-hidden rounded-2xl bg-alic-cream">
-                <Image
-                  src="/about/Norris-Bumstead-Herndon.avif"
-                  alt="Norris Bumstead Herndon"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 28vw"
-                  className="rounded-2xl object-contain transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[3fr_2fr] lg:gap-12">
             <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
+              <p>
+                In 1905, Herndon was approached by prominent community leaders —
+                among them Reverend Peter Bryant of Wheat Street Baptist Church —
+                to take over a financially struggling community self-help
+                organization called the Atlanta Benevolent and Protective
+                Association. At the time, African American families in the United
+                States did not have access to life insurance and financial
+                services through established institutions.
+              </p>
+              <p>
+                Herndon stepped in. He purchased the association for $140,
+                deposited $5,000 with the state of Georgia — becoming the first
+                company in the state to meet the new regulatory capital
+                requirement — and subsequently acquired two additional
+                organizations: the Royal Mutual Insurance Company and the National
+                Laborers&rsquo; Protective Union.
+              </p>
               <p>
                 On September 21, 1905, he consolidated all three into the Atlanta
                 Mutual Insurance Association. It was the beginning of something far
@@ -159,31 +133,41 @@ export default function OurStoryPage() {
               </p>
             </div>
 
-            <div className="mx-auto w-full overflow-hidden rounded-2xl lg:w-1/2">
-              <Image
-                src="/about/atlanta-life-insurance-company.gif"
-                alt="Atlanta Life Insurance Company"
-                width={1600}
-                height={800}
-                unoptimized
-                className="aspect-[2/1] h-auto w-full rounded-2xl object-cover object-top transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-              />
+            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
+              <div className="relative row-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/Norris-Bumstead-Herndon.avif"
+                  alt="Norris Bumstead Herndon"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/atlanta-life-insurance-salesmen.jpg"
+                  alt="Atlanta Life Insurance salesmen"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/atlanta-life-insurance-company.gif"
+                  alt="Atlanta Life Insurance Company"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-top transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
             </div>
           </div>
         </Collapsible>
 
         <Collapsible id="legacy-today" title="Legacy Today">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)_minmax(0,0.9fr)] lg:gap-10">
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/about/a-new-chapter.avif"
-                alt="A new chapter for Atlanta Life"
-                width={837}
-                height={639}
-                className="aspect-[837/639] h-auto w-full rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-              />
-            </div>
-
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
               <p>
                 Atlanta Life Insurance Company has operated continuously since 1905
@@ -222,14 +206,34 @@ export default function OurStoryPage() {
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/about/solutions4.avif"
-                alt="Atlanta Life Group Solutions"
-                width={840}
-                height={640}
-                className="aspect-[840/640] h-auto w-full rounded-2xl object-cover transition-transform duration-[400ms] ease-out hover:-translate-y-1.5 hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
-              />
+            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
+              <div className="relative row-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/a-new-chapter.avif"
+                  alt="A new chapter for Atlanta Life"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/solutions4.avif"
+                  alt="Atlanta Life Group Solutions"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/solutions1.avif"
+                  alt="Atlanta Life Group Solutions"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                />
+              </div>
             </div>
           </div>
         </Collapsible>

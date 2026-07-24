@@ -11,7 +11,7 @@ type NavGroup = { label: string; href: string; items: NavLink[] };
 const navGroups: NavGroup[] = [
     {
         label: "About",
-        href: "/about",
+        href: "/about/our-story",
         items: [
             { label: "Our Story", href: "/about/our-story" },
             { label: "Mission & Vision", href: "/about/mission-vision" },

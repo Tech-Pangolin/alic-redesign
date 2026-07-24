@@ -25,13 +25,15 @@ export default function PillarBoxes({ pillars }: { pillars: Pillar[] }) {
           tabIndex={0}
           className="group relative flex min-h-[17rem] scroll-mt-28 flex-col overflow-hidden rounded-2xl bg-alic-navy p-6 text-alic-cream outline-none transition-colors duration-300 hover:bg-alic-deep focus-visible:bg-alic-deep focus-visible:ring-2 focus-visible:ring-alic-gold"
         >
-          <div className="flex items-center gap-3">
+          <div
+            className={`flex flex-col gap-4 ${pillar.icon ? "items-center text-center" : ""}`}
+          >
+            <h3 className="font-serif text-xl font-normal">{pillar.name}</h3>
             {pillar.icon ? (
-              <span aria-hidden="true" className="text-alic-gold">
+              <span aria-hidden="true" className="flex justify-center text-alic-gold">
                 {pillar.icon}
               </span>
             ) : null}
-            <h3 className="font-serif text-xl font-normal">{pillar.name}</h3>
           </div>
 
           <div className="mt-4 flex-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100 group-focus-visible:opacity-100 group-target:opacity-100">
