@@ -9,24 +9,28 @@ export const assets = {
         linkedin: {
             src: "/linkedin.svg",
             alt: "LinkedIn",
+            href: "https://www.linkedin.com/company/atlanta-life-insurance-company/",
             width: 200,
             height: 200,
         },
-        twitter: {
+        x: {
             src: "/twitter.svg",
-            alt: "Twitter",
+            alt: "X",
+            href: "https://x.com/atlantalifeins",
             width: 200,
             height: 200,
         },
-        facebook: {
-            src: "/facebook.svg",
-            alt: "Facebook",
+        instagram: {
+            src: "/instagram.svg",
+            alt: "Instagram",
+            href: "https://www.instagram.com/atlantalife",
             width: 200,
             height: 200,
         },
         youtube: {
             src: "/youtube.svg",
             alt: "YouTube",
+            href: "https://www.youtube.com/@AtlantaLifeInsuranceCompany",
             width: 200,
             height: 200,
         },

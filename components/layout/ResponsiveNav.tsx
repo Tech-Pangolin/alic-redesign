@@ -122,7 +122,7 @@ export default function ResponsiveNav() {
                 </nav>
 
                 <div className="flex items-center gap-3 sm:gap-4">
-                    <CtaButton className="hidden sm:inline-flex" />
+                    <CtaButton size="compact" className="hidden sm:inline-flex" />
                     <button
                         type="button"
                         className="inline-flex rounded-sm p-2 text-xl text-alic-gold md:hidden"

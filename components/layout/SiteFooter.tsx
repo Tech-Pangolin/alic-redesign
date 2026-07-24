@@ -47,15 +47,22 @@ export default function SiteFooter() {
                         {Object.values(assets.social).map((img) => {
                             return (
                                 <li key={img.alt}>
-                                    <div style={{ width: 42, height: 42 }}>
+                                    <a
+                                        href={img.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={img.alt}
+                                        className="block"
+                                        style={{ width: 42, height: 42 }}
+                                    >
                                         <Image
                                             src={img.src}
-                                            alt={img.alt}
+                                            alt=""
                                             width={img.width}
                                             height={img.height}
                                             className="w-full h-full"
                                         />
-                                    </div>
+                                    </a>
                                 </li>
                             );
                         })}
