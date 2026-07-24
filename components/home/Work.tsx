@@ -9,7 +9,7 @@ const offerings = [
     body: "Our flagship wellness platform built on four pillars — physical, mental, financial, and social. A comprehensive framework for organizations committed to the full well-being of their people.",
     cta: "Explore LiveBalanced™",
     href: "/solutions",
-    image: "/work/ourWork1.png",
+    image: "/work/ourWork1.jpg",
     imageLeft: true,
   },
   {
@@ -25,7 +25,7 @@ const offerings = [
     body: "We are committed to meeting organizations with the tools and resources that reflect how we live and work now. We invest in access — practical, modern, and tech-forward.",
     cta: "Explore our tools",
     href: "/resources",
-    image: "/work/ourWork3.png",
+    image: "/work/ourWork3.jpg",
     imageLeft: true,
   },
   {
@@ -41,7 +41,7 @@ const offerings = [
     body: "Through purposeful initiatives, strategic partnerships, and ongoing investment in the communities we serve, we honor the founding conviction that has guided Atlanta Life from the beginning.",
     cta: "See our impact",
     href: "/about",
-    image: "/work/ourWork5.png",
+    image: "/work/ourWork5.jpg",
     imageLeft: true,
   },
 ] as const;
@@ -57,7 +57,7 @@ export default function Work() {
         </Reveal>
 
         <ul className={styles.list}>
-          {offerings.map((item) => (
+          {offerings.map((item, index) => (
             <li
               key={item.title}
               className={`${styles.row} ${item.imageLeft ? styles.imageLeft : styles.imageRight}`}
@@ -70,6 +70,8 @@ export default function Work() {
                     width={960}
                     height={720}
                     className={styles.image}
+                    priority={index < 2}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </Reveal>
               </div>

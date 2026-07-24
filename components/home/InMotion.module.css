@@ -91,6 +91,10 @@
   object-fit: cover;
 }
 
+.cellTopRight .photo {
+  object-position: top;
+}
+
 .newsroom {
   margin: 3rem 0 0;
   display: flex;
@@ -183,6 +187,7 @@
     width: 360px;
     height: 340px;
     object-fit: cover;
+    object-position: top;
   }
 
   .cellNascar .photoWrap {

@@ -15,7 +15,7 @@ const stories = [
   {
     text: "Atlanta Life Hosts Author Tayari Jones – Exclusive Interview, Book Signing and Q&A",
     href: "/about/community-impact",
-    image: "/inmotion/inmotion-3women.avif",
+    image: "/inmotion/tayari-jones.jpg",
     alt: "Atlanta Life Hosts Author Tayari Jones",
     layout: "topRight",
   },
@@ -29,7 +29,7 @@ const stories = [
   {
     text: "Atlanta Life at inaugural HBCU Aware Fest",
     href: "/about/community-impact",
-    image: "/inmotion/inmotion-million.avif",
+    image: "/inmotion/inmotion-million.png",
     alt: "Atlanta Life at inaugural HBCU Aware Fest",
     layout: "bottomRight",
   },
