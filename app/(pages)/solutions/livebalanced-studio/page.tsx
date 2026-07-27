@@ -145,31 +145,30 @@ export default function LiveBalancedStudioPage() {
       </section>
 
       <section className="border-t border-alic-cream/10">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-2 md:px-10 md:py-20">
-          <div>
-            <div className="flex flex-wrap items-center gap-4">
-              <h2 className="font-serif text-3xl font-normal md:text-4xl">
-                LiveBalanced&trade; Focus Groups
-              </h2>
-              <ComingSoon />
-            </div>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-alic-cream/80">
-              <p>
-                LiveBalanced&trade; Focus Groups are live, expert-led sessions
-                open to the public — bringing professionals together around the
-                wellness topics that matter most to the organizations and
-                communities we serve. Each session is an opportunity to learn,
-                engage, and connect with others navigating the same challenges.
-              </p>
-              <p>
-                Focus groups are open to all. Sign up below to be notified when
-                sessions are scheduled and to reserve your spot.
-              </p>
-            </div>
+        <div className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+          <div className="flex flex-wrap items-center gap-4">
+            <h2 className="font-serif text-3xl font-normal md:text-4xl">
+              LiveBalanced&trade; Focus Groups
+            </h2>
+            <ComingSoon />
           </div>
-          <div className="rounded-2xl bg-alic-navy p-8">
+          <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-alic-cream/80">
+            <p>
+              LiveBalanced&trade; Focus Groups are live, expert-led sessions
+              open to the public — bringing professionals together around the
+              wellness topics that matter most to the organizations and
+              communities we serve. Each session is an opportunity to learn,
+              engage, and connect with others navigating the same challenges.
+            </p>
+            <p>
+              Focus groups are open to all. Sign up below to be notified when
+              sessions are scheduled and to reserve your spot.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 w-full max-w-sm rounded-2xl bg-alic-navy p-6">
             <SignupForm
               dark
+              compact
               formName="LiveBalanced Studio — Focus Groups"
               buttonText="Sign up"
               fields={[

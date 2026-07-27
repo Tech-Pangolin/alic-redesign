@@ -15,6 +15,7 @@ type SignupFormProps = {
   formName: string;
   buttonText?: string;
   dark?: boolean;
+  compact?: boolean;
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,17 +25,18 @@ export default function SignupForm({
   formName,
   buttonText = "Submit",
   dark = false,
+  compact = false,
 }: SignupFormProps) {
   const [values, setValues] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
 
   const inputClass = dark
-    ? "w-full rounded-full border-2 border-transparent bg-alic-cream px-5 py-3 font-sans text-alic-navy outline-none focus:border-alic-gold"
-    : "w-full rounded-full border-2 border-alic-navy/15 bg-white px-5 py-3 font-sans text-alic-navy outline-none focus:border-alic-gold";
+    ? `w-full rounded-full border-2 border-transparent bg-alic-cream font-sans text-alic-navy outline-none focus:border-alic-gold ${compact ? "px-4 py-2 text-sm" : "px-5 py-3"}`
+    : `w-full rounded-full border-2 border-alic-navy/15 bg-white font-sans text-alic-navy outline-none focus:border-alic-gold ${compact ? "px-4 py-2 text-sm" : "px-5 py-3"}`;
   const labelClass = dark
-    ? "font-sans text-sm font-medium text-alic-cream"
-    : "font-sans text-sm font-medium text-alic-navy";
+    ? `font-sans font-medium text-alic-cream ${compact ? "text-xs" : "text-sm"}`
+    : `font-sans font-medium text-alic-navy ${compact ? "text-xs" : "text-sm"}`;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -100,9 +102,13 @@ export default function SignupForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className={`flex flex-col ${compact ? "gap-3" : "gap-4"}`}
+    >
       {fields.map((field) => (
-        <div key={field.name} className="flex flex-col gap-1.5">
+        <div key={field.name} className={`flex flex-col ${compact ? "gap-1" : "gap-1.5"}`}>
           <label htmlFor={`signup-${field.name}`} className={labelClass}>
             {field.label}
             {field.required ? (
@@ -138,7 +144,7 @@ export default function SignupForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-alic-gold px-8 py-3 font-sans text-lg font-semibold text-alic-navy transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-65"
+        className={`mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-alic-gold font-sans font-semibold text-alic-navy transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-65 ${compact ? "self-center px-6 py-2 text-base" : "self-start px-8 py-3 text-lg"}`}
       >
         {status === "submitting" ? "Submitting…" : buttonText}
         <span aria-hidden="true">→</span>

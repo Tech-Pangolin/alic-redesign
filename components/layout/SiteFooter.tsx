@@ -1,29 +1,12 @@
-"use client";
-
 import { assets } from "@/lib/assets";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const DARK_FOOTER_ROUTES = ["/solutions/livebalanced-studio"];
 
 export default function SiteFooter() {
-    const pathname = usePathname();
-    const dark = DARK_FOOTER_ROUTES.some(
-        (route) => pathname === route || pathname.startsWith(`${route}/`),
-    );
-
-    const outerClass = dark ? "bg-alic-deep" : "bg-foreground";
-    const cardClass = dark
-        ? "bg-alic-navy text-alic-cream"
-        : "bg-background text-alic-navy";
-
     return (
-        <div className={outerClass}>
-            <footer
-                className={`px-8 py-6 m-10 font-sans flex justify-between items-center rounded-2xl md:flex-row flex-col ${cardClass}`}
-            >
-                <div className="flex flex-col md:items-start items-center gap-4">
+        <div className="bg-foreground">
+            <footer className="m-10 flex flex-col items-center justify-between rounded-2xl bg-background px-8 py-6 font-sans text-alic-navy md:flex-row">
+                <div className="flex flex-col items-center gap-4 md:items-start">
                     <div>
                         <Link href="/">
                             <Image
@@ -60,7 +43,7 @@ export default function SiteFooter() {
                                             alt=""
                                             width={img.width}
                                             height={img.height}
-                                            className="w-full h-full"
+                                            className="h-full w-full"
                                         />
                                     </a>
                                 </li>
