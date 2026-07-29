@@ -11,7 +11,7 @@ export default function Foundation() {
           <Reveal variant="image" className={styles.media}>
             <span className={styles.accent} aria-hidden="true" />
             <Image
-              src="/foundation/foundation-left.png"
+              src="/foundation/foundation-left.jpg"
               alt="Atlanta Life foundation"
               width={640}
               height={800}
@@ -55,7 +55,7 @@ export default function Foundation() {
           <Reveal variant="image" delay={220} className={styles.media}>
             <span className={styles.accentLeft} aria-hidden="true" />
             <Image
-              src="/foundation/foundation-right.png"
+              src="/foundation/foundation-right.jpg"
               alt="Atlanta Life community"
               width={640}
               height={800}

@@ -56,7 +56,7 @@
 
 .title {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.1;
@@ -108,14 +108,14 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .section {
     padding-bottom: 6rem;
   }
 
   .inner {
     grid-template-columns: 4fr 3fr 2fr;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: stretch;
   }
 
@@ -135,6 +135,26 @@
 
   .column3 {
     grid-column: 3;
+  }
+
+  .heroImage {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .body {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .inner {
+    gap: 2rem;
   }
 
   .heroImage {

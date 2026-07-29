@@ -10,6 +10,15 @@ export const metadata: Metadata = {
     "The story of Atlanta Life — from Alonzo Herndon's vision and the 1905 founding to the legacy the company carries forward today.",
 };
 
+const collageClass =
+  "relative mb-4 grid w-full max-w-sm min-h-[14rem] grid-cols-2 grid-rows-2 gap-2 md:float-right md:mb-4 md:ml-8 md:max-w-md md:min-h-[17rem]";
+
+const imageClass =
+  "object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none";
+
+const textClass =
+  "space-y-4 text-center font-sans text-base leading-relaxed text-alic-navy/85";
+
 export default function OurStoryPage() {
   return (
     <main className="flex-1 bg-alic-cream">
@@ -18,10 +27,40 @@ export default function OurStoryPage() {
         subheadline="Every organization has a reason for being. Ours has never wavered."
       />
 
-      <section className="mx-auto w-full max-w-screen-2xl py-16 md:py-20">
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <Collapsible id="herndons-vision" title="Herndon's Vision">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
-            <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
+          <div className="flow-root">
+            <div className={collageClass}>
+              <div className="relative row-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/alonzo-herndon.avif"
+                  alt="Alonzo Franklin Herndon"
+                  fill
+                  sizes="(max-width: 1000px) 40vw, 12vw"
+                  className={imageClass}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/crystal-palace.png"
+                  alt="Crystal Palace barbershop"
+                  fill
+                  sizes="(max-width: 1000px) 40vw, 10vw"
+                  className={imageClass}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/herndon-barbershop-crystal-palace.png"
+                  alt="Herndon barbershop at the Crystal Palace"
+                  fill
+                  sizes="(max-width: 1000px) 40vw, 10vw"
+                  className={`${imageClass} object-top`}
+                />
+              </div>
+            </div>
+
+            <div className={textClass}>
               <p>
                 Our story begins with Alonzo Franklin Herndon — born on June 26,
                 1858, in Walton County, Georgia. Emancipated at the end of the
@@ -46,42 +85,43 @@ export default function OurStoryPage() {
                 else — is what gave rise to Atlanta Life.
               </p>
             </div>
-
-            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
-              <div className="relative row-span-2 overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/alonzo-herndon.avif"
-                  alt="Alonzo Franklin Herndon"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 30vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/crystal-palace.png"
-                  alt="Crystal Palace barbershop"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 18vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/herndon-barbershop-crystal-palace.png"
-                  alt="Herndon barbershop at the Crystal Palace"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 18vw"
-                  className="object-cover object-top transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-            </div>
           </div>
         </Collapsible>
 
         <Collapsible id="the-founding-1905" title="The Founding 1905">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[3fr_2fr] lg:gap-12">
-            <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
+          <div className="flow-root">
+            <div className={collageClass}>
+              <div className="relative row-span-2 overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/Norris-Bumstead-Herndon.avif"
+                  alt="Norris Bumstead Herndon"
+                  fill
+                  sizes="(max-width: 1000px) 40vw, 12vw"
+                  className={imageClass}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/atlanta-life-insurance-salesmen.jpg"
+                  alt="Atlanta Life Insurance salesmen"
+                  fill
+                  sizes="(max-width: 1000px) 40vw, 10vw"
+                  className={imageClass}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/about/atlanta-life-insurance-company.gif"
+                  alt="Atlanta Life Insurance Company"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 1000px) 40vw, 10vw"
+                  className={`${imageClass} object-top`}
+                />
+              </div>
+            </div>
+
+            <div className={textClass}>
               <p>
                 In 1905, Herndon was approached by prominent community leaders —
                 among them Reverend Peter Bryant of Wheat Street Baptist Church —
@@ -132,43 +172,22 @@ export default function OurStoryPage() {
                 Life has stood for since.
               </p>
             </div>
-
-            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
-              <div className="relative row-span-2 overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/Norris-Bumstead-Herndon.avif"
-                  alt="Norris Bumstead Herndon"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/atlanta-life-insurance-salesmen.jpg"
-                  alt="Atlanta Life Insurance salesmen"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/atlanta-life-insurance-company.gif"
-                  alt="Atlanta Life Insurance Company"
-                  fill
-                  unoptimized
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover object-top transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-            </div>
           </div>
         </Collapsible>
 
         <Collapsible id="legacy-today" title="Legacy Today">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4 font-sans text-base leading-relaxed text-alic-navy/85">
+          <div className="flow-root">
+            <div className="relative mb-4 w-full max-w-sm min-h-[14rem] overflow-hidden rounded-2xl md:float-right md:mb-4 md:ml-8 md:max-w-md md:min-h-[17rem]">
+              <Image
+                src="/about/a-new-chapter.avif"
+                alt="A new chapter for Atlanta Life"
+                fill
+                sizes="(max-width: 1000px) 40vw, 20vw"
+                className={imageClass}
+              />
+            </div>
+
+            <div className={textClass}>
               <p>
                 Atlanta Life Insurance Company has operated continuously since 1905
                 — through more than 120 years of economic shifts, industry
@@ -205,42 +224,12 @@ export default function OurStoryPage() {
                 a century in — continues.
               </p>
             </div>
-
-            <div className="grid min-h-[28rem] grid-cols-2 grid-rows-2 gap-3 lg:min-h-[34rem]">
-              <div className="relative row-span-2 overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/a-new-chapter.avif"
-                  alt="A new chapter for Atlanta Life"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/solutions4.avif"
-                  alt="Atlanta Life Group Solutions"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src="/about/solutions1.avif"
-                  alt="Atlanta Life Group Solutions"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
-                />
-              </div>
-            </div>
           </div>
         </Collapsible>
       </section>
 
       <section className="bg-alic-navy text-alic-cream">
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center md:px-10 md:py-20">
           <h2 className="font-serif text-3xl font-normal md:text-4xl">
             The mission behind the story —
           </h2>

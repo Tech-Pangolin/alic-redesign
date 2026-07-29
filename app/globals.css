@@ -22,6 +22,12 @@
   --font-sans: var(--font-commissioner), sans-serif;
   --font-serif: var(--font-mackinac), serif;
   --font-mono: var(--font-dm-mono), monospace;
+  /* Small < 1000 | Medium 1000–1599 | Large 1600+ */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 62.5rem;
+  --breakpoint-lg: 100rem;
+  --breakpoint-xl: 100rem;
+  --breakpoint-2xl: 100rem;
 }
 
 @layer base {

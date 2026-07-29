@@ -77,7 +77,7 @@
   transform: translateY(-6px) scale(1.02);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .arc {
     flex-direction: row;
     justify-content: center;
@@ -127,7 +127,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .section {
     padding: 5rem 50px 5.5rem;
   }

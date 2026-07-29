@@ -126,7 +126,7 @@ export default function LiveBalancedStudioPage() {
       </section>
 
       <section className="border-t border-alic-cream/10">
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
           <div className="flex flex-wrap items-center gap-4">
             <h2 className="font-serif text-3xl font-normal md:text-4xl">
               LiveBalanced&trade; MasterClass
@@ -145,7 +145,7 @@ export default function LiveBalancedStudioPage() {
       </section>
 
       <section className="border-t border-alic-cream/10">
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
           <div className="flex flex-wrap items-center gap-4">
             <h2 className="font-serif text-3xl font-normal md:text-4xl">
               LiveBalanced&trade; Focus Groups
@@ -165,10 +165,9 @@ export default function LiveBalancedStudioPage() {
               sessions are scheduled and to reserve your spot.
             </p>
           </div>
-          <div className="mx-auto mt-10 w-full max-w-sm rounded-2xl bg-alic-navy p-6">
+          <div className="mx-auto mt-10 w-full rounded-2xl bg-alic-navy p-8 md:max-w-[calc(50%-1.25rem)]">
             <SignupForm
               dark
-              compact
               formName="LiveBalanced Studio — Focus Groups"
               buttonText="Sign up"
               fields={[
@@ -209,7 +208,7 @@ export default function LiveBalancedStudioPage() {
           <p className="mt-3 font-sans text-base text-alic-cream/80">
             Perspectives on wellness from the experts driving the work.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {blogPosts.map((title) => (
               <article
                 key={title}

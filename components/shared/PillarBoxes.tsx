@@ -17,7 +17,7 @@ export type Pillar = {
 
 export default function PillarBoxes({ pillars }: { pillars: Pillar[] }) {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       {pillars.map((pillar) => (
         <div
           key={pillar.name}
@@ -55,7 +55,7 @@ export default function PillarBoxes({ pillars }: { pillars: Pillar[] }) {
             {pillar.href ? (
               <Link
                 href={pillar.href}
-                className="mt-4 inline-flex items-center gap-2 font-sans text-sm font-semibold text-alic-gold hover:underline"
+                className="mt-4 inline-flex items-center gap-2 font-sans text-sm font-semibold text-alic-gold no-underline hover:no-underline"
               >
                 Learn more <span aria-hidden="true">→</span>
               </Link>

@@ -125,7 +125,7 @@ export default function LiveBalancedPage() {
 
       <section
         id="what-is-lb"
-        className="mx-auto w-full max-w-4xl scroll-mt-28 px-6 py-16 md:px-10 md:py-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 py-16 md:px-10 md:py-20"
       >
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           What is LiveBalanced&trade;
@@ -174,7 +174,7 @@ export default function LiveBalancedPage() {
           <h3 className="font-serif text-2xl font-normal text-alic-navy">
             The cost of not investing
           </h3>
-          <dl className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <dl className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-3">
             {costStats.map((stat) => (
               <div key={stat.value}>
                 <dt className="font-serif text-4xl font-normal text-alic-gold">
@@ -194,7 +194,7 @@ export default function LiveBalancedPage() {
 
       <section
         id="our-approach"
-        className="mx-auto w-full max-w-4xl scroll-mt-28 px-6 pb-16 md:px-10 md:pb-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-16 md:px-10 md:pb-20"
       >
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           Our Approach
@@ -300,11 +300,11 @@ export default function LiveBalancedPage() {
       </section>
 
       <section className="bg-alic-navy text-alic-cream">
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center md:px-10 md:py-20">
           <h2 className="font-serif text-3xl font-normal md:text-4xl">
             Ready to bring LiveBalanced&trade; to your organization?
           </h2>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-alic-gold px-8 py-4 font-sans text-lg font-semibold text-alic-navy transition-opacity hover:opacity-90"

@@ -17,7 +17,7 @@ export default function CeCoursesPage() {
         subheadline="Atlanta Life offers certified continuing education opportunities for brokers and financial industry professionals — built to deepen expertise and strengthen the value you bring to the people you serve."
       />
 
-      <section className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           CE Courses
         </h2>
@@ -40,7 +40,7 @@ export default function CeCoursesPage() {
       </section>
 
       <section className="bg-white/60">
-        <div className="mx-auto w-full max-w-2xl px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
           <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
             Course Registration
           </h2>

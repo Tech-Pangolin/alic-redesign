@@ -94,7 +94,7 @@ export default function CommunityImpactPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-4xl px-6 pb-16 md:px-10 md:pb-20">
+      <section className="mx-auto w-full max-w-6xl px-6 pb-16 md:px-10 md:pb-20">
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           Our Commitment
         </h2>
