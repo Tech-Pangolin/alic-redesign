@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { getContactApiUrl } from "@/lib/contact-api";
 import styles from "./ContactForm.module.css";
 
 type FormFields = {
@@ -72,7 +73,7 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(getContactApiUrl(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
