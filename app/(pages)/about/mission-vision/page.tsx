@@ -114,28 +114,28 @@ function PeopleIcon() {
 const pillars: Pillar[] = [
   {
     name: "Physical Wellness",
-    href: "/solutions/livebalanced#physical-wellness",
+    href: "/solutions/livebalanced",
     icon: <DumbbellIcon />,
     description:
       "The health and vitality of your people is foundational to everything your organization does. When people feel physically well, they show up more fully — more present, more capable, and more able to contribute at their best.",
   },
   {
     name: "Mental Wellness",
-    href: "/solutions/livebalanced#mental-wellness",
+    href: "/solutions/livebalanced",
     icon: <BrainIcon />,
     description:
       "Mental health is not separate from performance, productivity, or purpose. It is inseparable from all three. Supporting mental wellness in the workplace is one of the most meaningful investments an organization can make in its people.",
   },
   {
     name: "Financial Wellness",
-    href: "/solutions/livebalanced#financial-wellness",
+    href: "/solutions/livebalanced",
     icon: <DollarSignIcon />,
     description:
       "Financial stress is one of the most pervasive challenges facing today's workforce. Equipping people with the tools, knowledge, and access they need to secure their financial futures is an act of genuine organizational care.",
   },
   {
     name: "Social Wellness",
-    href: "/solutions/livebalanced#social-wellness",
+    href: "/solutions/livebalanced",
     icon: <PeopleIcon />,
     description:
       "People need purpose, connection, and a sense of belonging to something beyond themselves. Social wellness recognizes that we do not thrive in isolation — and that organizations play a meaningful role in cultivating that connection.",
@@ -150,7 +150,7 @@ export default function MissionVisionPage() {
         subheadline="What we believe shapes everything we do. These are not aspirations. They are the standards we hold ourselves to."
       />
 
-      <section className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           Our Mission &amp; Vision
         </h2>
@@ -183,7 +183,7 @@ export default function MissionVisionPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-4xl px-6 pb-4 md:px-10">
+      <section className="mx-auto w-full max-w-6xl px-6 pb-4 md:px-10">
         <Collapsible id="core-values" title="Core Values">
           <p className="font-sans text-base leading-relaxed text-alic-navy/85">
             The values below are not statements we display. They are the

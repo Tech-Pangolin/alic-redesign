@@ -18,7 +18,7 @@ export default function PageHeader({
       className="relative isolate w-full overflow-hidden bg-alic-navy"
       style={{ backgroundImage: "var(--alic-mesh-image)" }}
     >
-      <div className="mx-auto grid w-full grid-cols-1 items-center gap-4 px-10 py-5 md:py-6 lg:grid-cols-2 lg:gap-6 lg:py-7">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-4 px-6 py-5 md:grid-cols-2 md:gap-6 md:px-10 md:py-7">
         <div>
           <h1 className="font-serif text-2xl font-normal leading-tight text-alic-gold md:text-3xl lg:text-4xl">
             {title}

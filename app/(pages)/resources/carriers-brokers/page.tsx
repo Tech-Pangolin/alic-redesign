@@ -51,7 +51,7 @@ export default function CarriersBrokersResourcesPage() {
           <ArticleGrid articles={articles} />
         </div>
 
-        <div className="mt-14 flex flex-col items-start gap-4 rounded-2xl border border-alic-navy/10 bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col items-start gap-4 rounded-2xl border border-alic-navy/10 bg-white p-8 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="font-serif text-2xl font-normal text-alic-navy">
               Continuing Education Courses

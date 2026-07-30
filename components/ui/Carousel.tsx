@@ -25,11 +25,11 @@ export default function Carousel({ children, label, dark = false }: CarouselProp
     <div className="relative" role="region" aria-label={label} aria-roledescription="carousel">
       <div
         ref={trackRef}
-        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4"
+        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {children}
       </div>
-      <div className="mt-2 flex gap-3">
+      <div className="mt-4 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={() => scrollByDir(-1)}
