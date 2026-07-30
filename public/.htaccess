@@ -1,0 +1,19 @@
+# Next.js static export on Hostinger (LiteSpeed/Apache)
+# Maps /path and /path/ to /path.html so refresh works on nested routes.
+
+Options -MultiViews
+DirectorySlash Off
+RewriteEngine On
+
+# Prefer existing files as-is
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# /foo/ → serve foo.html when it exists
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteCond %{DOCUMENT_ROOT}%1.html -f
+RewriteRule ^ %1.html [L]
+
+# /foo → serve foo.html when it exists
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L]
