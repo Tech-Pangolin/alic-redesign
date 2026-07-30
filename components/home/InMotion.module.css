@@ -28,7 +28,7 @@
 
 .heading {
   margin: 0.75rem 0 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.15;
@@ -123,13 +123,53 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .section {
     padding-block: 6rem;
   }
 
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
+  .featureStack {
+    gap: 1rem;
+  }
+
+  .storyCardWrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .photoWrap {
+    width: 100%;
+    margin: 0;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .cellTopRight .storyCardWrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cellTopRight .storyCardWrap > * {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cellBottomRight .featureStack {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid {
     gap: 3rem 2.5rem;
   }
 
@@ -167,11 +207,18 @@
   .cellTopRight .storyCardWrap {
     /* Overlap bottom-right ~10% of the 360×340 photo */
     top: calc(340px * 0.9 - 50px);
-    left: calc(360px * 0.9 - 200px);
+    left: calc(360px * 0.9 - 250px);
     right: auto;
     bottom: auto;
     margin-top: 0;
     transform: none;
+    width: 500px;
+    max-width: 500px;
+  }
+
+  .cellTopRight .storyCardWrap > * {
+    width: 100%;
+    max-width: none;
   }
 
   .cellTopRight .photoWrap {

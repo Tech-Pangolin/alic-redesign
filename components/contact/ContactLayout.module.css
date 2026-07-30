@@ -19,7 +19,7 @@
   min-width: 0;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .layout {
     grid-template-columns: 1fr 1fr;
     align-items: start;

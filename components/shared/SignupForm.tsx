@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { getContactApiUrl } from "@/lib/contact-api";
 
 export type SignupField = {
   name: string;
@@ -65,7 +66,7 @@ export default function SignupForm({
     setError(null);
     setStatus("submitting");
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(getContactApiUrl(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, subject: formName, message }),

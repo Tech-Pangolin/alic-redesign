@@ -64,6 +64,10 @@ const dmMono = localFont({
 export const metadata: Metadata = {
   title: "Atlanta Life Insurance Company",
   description: "ALIC Solutions",
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({

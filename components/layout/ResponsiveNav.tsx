@@ -113,11 +113,6 @@ export default function ResponsiveNav() {
                                 </div>
                             </li>
                         ))}
-                        <li className="flex items-center">
-                            <Link href="/contact" className={navStyles.trigger}>
-                                Contact
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
 
@@ -185,15 +180,6 @@ export default function ResponsiveNav() {
                                     </li>
                                 );
                             })}
-                            <li>
-                                <Link
-                                    href="/contact"
-                                    className={navStyles.mobileGroupButton}
-                                    onClick={close}
-                                >
-                                    Contact
-                                </Link>
-                            </li>
                         </ul>
                         <CtaButton className="mt-6 w-full justify-center" onClick={close} />
                     </nav>

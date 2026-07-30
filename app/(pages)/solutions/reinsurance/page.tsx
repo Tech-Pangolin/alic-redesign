@@ -18,7 +18,7 @@ export default function ReinsurancePage() {
 
       <section
         id="what-is-reinsurance"
-        className="mx-auto w-full max-w-4xl scroll-mt-28 px-6 py-16 md:px-10 md:py-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 py-16 md:px-10 md:py-20"
       >
         <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
           What is Reinsurance
@@ -54,7 +54,7 @@ export default function ReinsurancePage() {
         id="how-it-works-at-atlanta-life"
         className="scroll-mt-28 bg-white/60"
       >
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
           <h2 className="font-serif text-3xl font-normal text-alic-navy md:text-4xl">
             How it Works at Atlanta Life
           </h2>
@@ -93,11 +93,11 @@ export default function ReinsurancePage() {
       </section>
 
       <section className="bg-alic-navy text-alic-cream">
-        <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center md:px-10 md:py-20">
           <h2 className="font-serif text-3xl font-normal md:text-4xl">
             Want to learn more about partnering with Atlanta Life?
           </h2>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-alic-gold px-8 py-4 font-sans text-lg font-semibold text-alic-navy transition-opacity hover:opacity-90"

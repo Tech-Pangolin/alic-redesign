@@ -13,13 +13,6 @@ export const assets = {
             width: 200,
             height: 200,
         },
-        x: {
-            src: "/twitter.svg",
-            alt: "X",
-            href: "https://x.com/atlantalifeins",
-            width: 200,
-            height: 200,
-        },
         instagram: {
             src: "/instagram.svg",
             alt: "Instagram",

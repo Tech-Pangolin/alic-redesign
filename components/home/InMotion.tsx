@@ -8,7 +8,7 @@ const stories = [
   {
     text: "Atlanta Life & Rajah Caruth\nNASCAR Daytona International Speedway",
     href: "/about/community-impact",
-    image: "/inmotion/inmotion-nascar.png",
+    image: "/inmotion/inmotion-nascar.avif",
     alt: "Atlanta Life and Rajah Caruth at NASCAR Daytona International Speedway",
     layout: "nascar",
   },
@@ -29,7 +29,7 @@ const stories = [
   {
     text: "Atlanta Life at inaugural HBCU Aware Fest",
     href: "/about/community-impact",
-    image: "/inmotion/inmotion-million.png",
+    image: "/inmotion/inmotion-million.avif",
     alt: "Atlanta Life at inaugural HBCU Aware Fest",
     layout: "bottomRight",
   },
