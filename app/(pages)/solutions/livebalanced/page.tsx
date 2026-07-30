@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/shared/PageHeader";
 import PillarBoxes, { type Pillar } from "@/components/shared/PillarBoxes";
@@ -97,19 +98,30 @@ const costStats = [
   },
 ];
 
-const digitalPartners = [
+const digitalPartners: {
+  name: string;
+  logo: string;
+  description: string;
+  logoClassName?: string;
+  contentClassName?: string;
+}[] = [
   {
     name: "Mellie",
+    logo: "/partners/mellie-logo.png",
     description:
       "Mellie is a caregiving support platform that helps family caregivers plan, manage, and coordinate care for older adults and loved ones with special needs. Through personalized care plans, dedicated care coordinators, and an easy-to-use app, Mellie gives employees the support they need to navigate one of life's most demanding responsibilities.",
   },
   {
     name: "Goodpath",
+    logo: "/partners/goodpath-logo.png",
     description:
       "Goodpath is a whole-person care platform that delivers personalized, clinically supported programs for chronic conditions — including musculoskeletal pain, mental health, sleep, and digestive health. By addressing the full health picture rather than isolated symptoms, Goodpath helps employees feel better and organizations perform stronger.",
   },
   {
     name: "Express Wages",
+    logo: "/partners/express-wages-logo.png",
+    logoClassName: "h-32 w-full max-w-xs -translate-y-[5px]",
+    contentClassName: "-mt-8",
     description:
       "Express Wages is an earned wage access platform that gives employees on-demand access to the wages they have already earned — before their scheduled payday. By reducing financial stress and providing greater flexibility over pay, Express Wages supports workforce stability and financial well-being.",
   },
@@ -257,10 +269,15 @@ export default function LiveBalancedPage() {
               </p>
             </div>
           </div>
-          <div
-            className="min-h-[20rem] rounded-2xl bg-alic-warm/50"
-            aria-hidden="true"
-          />
+          <div className="relative min-h-[20rem] overflow-hidden rounded-2xl">
+            <Image
+              src="/partners/dr-kristin-tugman.png"
+              alt="Dr. Kristin Tugman"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 999px) 100vw, 50vw"
+            />
+          </div>
         </div>
       </section>
 
@@ -285,15 +302,24 @@ export default function LiveBalancedPage() {
               className="flex flex-col rounded-2xl border border-alic-navy/10 bg-white p-6"
             >
               <div
-                className="mb-4 h-16 w-32 rounded-md bg-alic-warm/50"
-                aria-hidden="true"
-              />
-              <h3 className="font-serif text-xl font-normal text-alic-navy">
-                {partner.name}
-              </h3>
-              <p className="mt-2 font-sans text-sm leading-relaxed text-alic-navy/80">
-                {partner.description}
-              </p>
+                className={`relative mb-4 ${partner.logoClassName ?? "h-24 w-48"}`}
+              >
+                <Image
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  fill
+                  className="object-contain object-left"
+                  sizes="320px"
+                />
+              </div>
+              <div className={partner.contentClassName}>
+                <h3 className="font-serif text-xl font-normal text-alic-navy">
+                  {partner.name}
+                </h3>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-alic-navy/80">
+                  {partner.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

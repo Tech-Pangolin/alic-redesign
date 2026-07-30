@@ -700,4 +700,317 @@ _**Agent (default)**_
 
 <think><details><summary>Thought Process</summary>
 ContactDetails checks out. Labels correctly use font-sans. Values correctly use serif.
+
+ThenAndNow `.label` uses serif. This may violate the brand guideline that labels should be Commissioner (sans).
+
+ContactDetails address and email values use serif. These are display-style contact details, so this may be acceptable under the brand guidelines.
+
+StoryCard titles are currently `<p>` elements styled as headings. They should use serif for display content per the brand guidelines.
+
+ImagePlaceholder placeholder text correctly uses font-sans. CtaButton correctly inherits font-sans for buttons. DM Mono is loaded but unused across components. The our-story page structure is correct: Collapsible titles use serif and body text uses sans. Livebalanced quotes correctly apply font-serif. Timeline body text correctly uses sans. Purpose foundation titles still need verification.
+
+Resources pages should be checked for headings that inherit sans instead of using font classes.
 </details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "glob": "*.{tsx,css,module.css}",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\app",
+  "pattern": "className=.*\\b(text-(2|3|4|5)xl|text-\\[|font-bold|font-semibold)"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\app",
+  "pattern": "className=.*\\b(text-(2|3|4|5)xl|text-\\[|font-bold|font-semibold)",
+  "topFiles": [
+    {
+      "matchCount": 9,
+      "uri": "app\\(pages)\\solutions\\livebalanced-studio\\page.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "app\\(pages)\\about\\mission-vision\\page.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "app\\(pages)\\about\\our-story\\page.tsx"
+    },
+    {
+      "matchCount": 5,
+      "uri": "app\\(pages)\\solutions\\reinsurance\\page.tsx"
+    },
+    {
+      "matchCount": 10,
+      "uri": "app\\(pages)\\solutions\\livebalanced\\page.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "app\\(pages)\\resources\\carriers-brokers\\page.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "app\\(pages)\\resources\\carriers-brokers\\ce-courses\\page.tsx"
+    },
+    {
+      "matchCount": 4,
+      "uri": "app\\(pages)\\about\\community-impact\\page.tsx"
+    }
+  ],
+  "totalFiles": 8,
+  "totalMatches": 36
+}
+```
+Status: **completed**
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\home\ImagePlaceholder.module.css</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\components\contact\ContactHero.module.css</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2** • Read file: c:\Users\terra\Projects\CourtneyJohnson\alic-redesign\app\(pages)\about\our-story\page.tsx</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "count",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components",
+  "pattern": "var\\(--font-serif\\)|var\\(--font-sans\\)|font-serif|font-sans"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "count",
+  "path": "c:\\Users\\terra\\Projects\\CourtneyJohnson\\alic-redesign\\components",
+  "pattern": "var\\(--font-serif\\)|var\\(--font-sans\\)|font-serif|font-sans",
+  "topFiles": [
+    {
+      "matchCount": 3,
+      "uri": "components/home/Purpose.module.css"
+    },
+    {
+      "matchCount": 3,
+      "uri": "components/home/Hero.module.css"
+    },
+    {
+      "matchCount": 3,
+      "uri": "components/about/AboutCta.module.css"
+    },
+    {
+      "matchCount": 4,
+      "uri": "components/home/Work.module.css"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/contact/ContactHero.module.css"
+    },
+    {
+      "matchCount": 3,
+      "uri": "components/home/InMotion.module.css"
+    },
+    {
+      "matchCount": 1,
+      "uri": "components/shared/StoryCard.module.css"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/contact/ContactDetails.module.css"
+    },
+    {
+      "matchCount": 3,
+      "uri": "components/home/Foundation.module.css"
+    },
+    {
+      "matchCount": 8,
+      "uri": "components/contact/ContactForm.module.css"
+    },
+    {
+      "matchCount": 1,
+      "uri": "components/layout/SiteFooter.tsx"
+    },
+    {
+      "matchCount": 3,
+      "uri": "components/about/Timeline.module.css"
+    },
+    {
+      "matchCount": 4,
+      "uri": "components/about/ThenAndNow.module.css"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/about/OurStory.module.css"
+    },
+    {
+      "matchCount": 8,
+      "uri": "components/shared/SignupForm.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/shared/PageHeader.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": "components/home/ImagePlaceholder.module.css"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/about/HistoryIntro.module.css"
+    },
+    {
+      "matchCount": 4,
+      "uri": "components/shared/ArticleCard.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components/shared/PillarBoxes.tsx"
+    }
+  ],
+  "totalFiles": 22,
+  "totalMatches": 64
+}
+```
+Status: **completed**
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="update_current_step"><details>
+<summary>Tool use: **update_current_step**</summary>
+An unknown error occurred
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+I have completed the audit of the Next.js app. I now have a complete picture of the font token setup, component usage, and mismatches against the brand guidelines.
+
+Two additional mismatches surfaced. ContactDetails `.value` renders phone, address, and email in serif, which should be sans for body UI. ThenAndNow `.label` also incorrectly uses serif instead of sans. CtaButton correctly inherits sans from the body. I am now structuring the final report.
+</details></think>
+
+_**Agent (default)**_
+
+## Token setup
+
+| Token | Maps to | Source |
+|---|---|---|
+| `--font-sans` | Commissioner | `app/globals.css` `@theme` → `var(--font-commissioner)` |
+| `--font-serif` | Mackinac Pro | `var(--font-mackinac)` |
+| `--font-mono` | DM Mono | `var(--font-dm-mono)` |
+
+**Loading** (`app/layout.tsx`): all three via `next/font/local`; CSS variables set on `<html>`; `<body className="… font-sans">`.
+
+**Base** (`globals.css`): `body` uses `--font-sans`, weight 500, fluid size. Inheritance means anything without an override is Commissioner.
+
+**DM Mono**: loaded and tokenized; **zero usages** in TSX/CSS modules.
+
+---
+
+## Homepage (titles/headings)
+
+| Section | Element | Current | Should be |
+|---|---|---|---|
+| **Hero** | `h1.title` | sans | **serif** |
+| Hero | `.body`, `.cta` | sans | sans (OK) |
+| **Work** | `h2.heading`, `h3.title` | sans | **serif** |
+| Work | `.body`, `.cta` | sans | sans (OK) |
+| **Foundation** | `h2.title` | sans | **serif** |
+| Foundation | `.copy`, `.cta` | sans | sans (OK) |
+| **InMotion** | `h2.heading` | sans | **serif** |
+| InMotion | `.eyebrow`, `.body` | sans | sans (OK) |
+| **Purpose** | `h2.heading` | sans | **serif** |
+| Purpose | `.body`, `.secondaryCta` | sans | sans (OK) |
+| **StoryCard** (used in InMotion) | `.title` (display line) | sans | **serif** |
+
+Homepage is the main problem: every section heading/title is Commissioner.
+
+---
+
+## Mismatches vs guidelines
+
+**Clear (heading/display on sans):**
+
+1. `components/home/Hero.module.css` — `.title` (h1) — sans → serif  
+2. `components/home/Work.module.css` — `.heading` (h2), `.title` (h3) — sans → serif  
+3. `components/home/Foundation.module.css` — `.title` (h2) — sans → serif  
+4. `components/home/InMotion.module.css` — `.heading` (h2) — sans → serif  
+5. `components/home/Purpose.module.css` — `.heading` (h2) — sans → serif  
+6. `components/shared/StoryCard.module.css` — `.title` — sans → serif  
+
+**Soft / edge cases:**
+
+7. `components/about/ThenAndNow.module.css` — `.label` (“Then & Now” chip) — **serif**, guidelines say labels → **sans**  
+8. `components/contact/ContactDetails.module.css` — `.value` (phone/address/email) — **serif**; more body/UI → likely **sans** (label is already sans)
+
+**No body-on-serif issues** found except those edge cases. Quotes (e.g. livebalanced `p.font-serif`, ThenAndNow `.questions`) correctly use serif.
+
+---
+
+## Already correct
+
+| Area | Status |
+|---|---|
+| Token wiring + body default | Correct |
+| `PageHeader` | h1 serif, subhead sans |
+| `ResponsiveNav` | links sans |
+| `SiteFooter` | `font-sans` |
+| `CtaButton` | inherits body sans (OK for buttons) |
+| `Collapsible` | title span `font-serif` |
+| `PillarBoxes` | h3 serif, link sans |
+| `ArticleCard`, `SignupForm` | serif titles / sans UI |
+| About: `OurStory`, `HistoryIntro`, `AboutCta`, `Timeline` | headings/years serif, body sans |
+| About pages: `our-story`, `mission-vision`, `community-impact` | headings serif, copy/CTAs sans |
+| Contact: `ContactHero`, form success heading | serif / sans split OK |
+| Solutions / resources pages (Tailwind) | consistent `font-serif` headings + `font-sans` body |
+
+---
+
+## Scope estimate
+
+| Effort | Count |
+|---|---|
+| **Must-fix files** | **6** CSS modules (homepage + StoryCard) |
+| **Selectors to flip** | **~8** (Hero 1, Work 2, Foundation 1, InMotion 1, Purpose 1, StoryCard 1) |
+| **Optional polish** | ThenAndNow `.label`, ContactDetails `.value` (2 places) |
+| **App pages / shared layout** | ~0 required changes |
+| **Mono** | No cleanup needed unless you want to use it for accents |
+
+**Roughly: 6 files / ~8 one-line `var(--font-sans)` → `var(--font-serif)` changes** for full homepage compliance; plus 0–2 optional edge cases.

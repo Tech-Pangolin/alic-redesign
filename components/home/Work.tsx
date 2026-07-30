@@ -15,7 +15,7 @@ const offerings = [
   {
     title: "Expert Advisory",
     body: "We bring leading professionals in workplace wellness alongside our clients — experts whose knowledge shapes stronger programs and drives better outcomes for the people within them.",
-    cta: "Meet our advisors",
+    cta: "Meet our Expert Partners",
     href: "/solutions",
     image: "/work/ourWork2.jpg",
     imageLeft: false,
