@@ -16,11 +16,20 @@ function getPrivateKey(): string {
 }
 
 export async function appendContactRow(submission: ContactSubmission) {
-  const sheetId = process.env.GOOGLE_SHEET_ID;
+  const primarySheetId = process.env.GOOGLE_SHEET_ID;
+  const secondarySheetId = process.env.GOOGLE_SECONDARY_SHEET_ID;
   const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 
-  if (!sheetId) {
+  if (!primarySheetId) {
     throw new Error("GOOGLE_SHEET_ID is not configured.");
+  }
+  if (!secondarySheetId) {
+    throw new Error("GOOGLE_SECONDARY_SHEET_ID is not configured.");
+  }
+  if (primarySheetId === secondarySheetId) {
+    throw new Error(
+      "GOOGLE_SHEET_ID and GOOGLE_SECONDARY_SHEET_ID must be different.",
+    );
   }
   if (!clientEmail) {
     throw new Error("GOOGLE_SERVICE_ACCOUNT_EMAIL is not configured.");
@@ -33,20 +42,23 @@ export async function appendContactRow(submission: ContactSubmission) {
   });
 
   const sheets = google.sheets({ version: "v4", auth });
+  const values = [
+    [
+      submission.name,
+      submission.email,
+      submission.subject,
+      submission.message,
+    ],
+  ];
 
-  await sheets.spreadsheets.values.append({
-    spreadsheetId: sheetId,
-    range: "A:D",
-    valueInputOption: "USER_ENTERED",
-    requestBody: {
-      values: [
-        [
-          submission.name,
-          submission.email,
-          submission.subject,
-          submission.message,
-        ],
-      ],
-    },
-  });
+  await Promise.all(
+    [primarySheetId, secondarySheetId].map((spreadsheetId) =>
+      sheets.spreadsheets.values.append({
+        spreadsheetId,
+        range: "A:D",
+        valueInputOption: "USER_ENTERED",
+        requestBody: { values },
+      }),
+    ),
+  );
 }
