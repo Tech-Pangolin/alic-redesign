@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/shared/PageHeader";
-import SignupForm from "@/components/shared/SignupForm";
+// import PageHeader from "@/components/shared/PageHeader";
+// import SignupForm from "@/components/shared/SignupForm";
 
 export const metadata: Metadata = {
   title:
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function CeCoursesPage() {
   return (
     <main className="flex-1 bg-alic-cream">
+      {/* Continuing Education Courses — temporarily hidden
       <PageHeader
         title="Continuing Education Courses"
         subheadline="Atlanta Life offers certified continuing education opportunities for brokers and financial industry professionals — built to deepen expertise and strengthen the value you bring to the people you serve."
@@ -73,6 +74,7 @@ export default function CeCoursesPage() {
           </div>
         </div>
       </section>
+      */}
     </main>
   );
 }
