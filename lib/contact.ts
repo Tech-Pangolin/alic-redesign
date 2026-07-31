@@ -45,11 +45,15 @@ export function validateContactPayload(
   return { ok: true, data: { name, email, subject, message } };
 }
 
+function normalizeOrigin(origin: string): string {
+  return origin.trim().replace(/\/+$/, "").toLowerCase();
+}
+
 export function getAllowedOrigins(): string[] {
   const raw = process.env.CONTACT_ALLOWED_ORIGINS ?? "";
   return raw
     .split(",")
-    .map((origin) => origin.trim())
+    .map(normalizeOrigin)
     .filter(Boolean);
 }
 
@@ -61,7 +65,7 @@ export function corsHeaders(origin: string | null): HeadersInit {
     Vary: "Origin",
   };
 
-  if (origin && allowed.includes(origin)) {
+  if (origin && allowed.includes(normalizeOrigin(origin))) {
     headers["Access-Control-Allow-Origin"] = origin;
   }
 
