@@ -16,6 +16,7 @@ const navGroups: NavGroup[] = [
             { label: "Our Story", href: "/about/our-story" },
             { label: "Mission & Vision", href: "/about/mission-vision" },
             { label: "Community Impact", href: "/about/community-impact" },
+            { label: "Newsroom", href: "/about/newsroom" },
         ],
     },
     {

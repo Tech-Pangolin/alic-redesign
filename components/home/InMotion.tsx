@@ -7,28 +7,28 @@ import styles from "./InMotion.module.css";
 const stories = [
   {
     text: "Atlanta Life & Rajah Caruth\nNASCAR Daytona International Speedway",
-    href: "/about/community-impact",
+    href: "/about/newsroom",
     image: "/inmotion/inmotion-nascar.avif",
     alt: "Atlanta Life and Rajah Caruth at NASCAR Daytona International Speedway",
     layout: "nascar",
   },
   {
     text: "Atlanta Life Hosts Author Tayari Jones – Exclusive Interview, Book Signing and Q&A",
-    href: "/about/community-impact",
+    href: "/about/newsroom",
     image: "/inmotion/tayari-jones.jpg",
     alt: "Atlanta Life Hosts Author Tayari Jones",
     layout: "topRight",
   },
   {
     text: "Atlanta Life Power Home Remodeling Financial Literacy Education Event",
-    href: "/about/community-impact",
+    href: "/about/newsroom",
     image: "/inmotion/inmontion-speaker.avif",
     alt: "Atlanta Life Power Home Remodeling Financial Literacy Education Event",
     layout: "bottomLeft",
   },
   {
     text: "Atlanta Life at inaugural HBCU Aware Fest",
-    href: "/about/community-impact",
+    href: "/about/newsroom",
     image: "/inmotion/inmotion-million.avif",
     alt: "Atlanta Life at inaugural HBCU Aware Fest",
     layout: "bottomRight",
@@ -102,7 +102,7 @@ export default function InMotion() {
           <Reveal delay={200}>
             <CtaButton
               text="Visit our newsroom for all stories"
-              href="/about/community-impact"
+              href="/about/newsroom"
               className={styles.newsroomCta}
             />
           </Reveal>

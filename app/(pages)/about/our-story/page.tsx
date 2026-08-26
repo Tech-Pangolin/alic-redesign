@@ -175,15 +175,15 @@ export default function OurStoryPage() {
           </div>
         </Collapsible>
 
-        <Collapsible id="legacy-today" title="Legacy Today">
+        <Collapsible id="legacy-today" title="Legacy Today" defaultOpen>
           <div className="flow-root">
             <div className="relative mb-4 w-full max-w-sm min-h-[14rem] overflow-hidden rounded-2xl md:float-right md:mb-4 md:ml-8 md:max-w-md md:min-h-[17rem]">
-              <Image
-                src="/about/a-new-chapter.avif"
-                alt="A new chapter for Atlanta Life"
-                fill
-                sizes="(max-width: 1000px) 40vw, 20vw"
-                className={imageClass}
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/ourStory/Atlanta%20Life%20Insurance%20Company_%20Honoring%20a%20Legacy,%20Building%20the%20Future.mp4"
               />
             </div>
 
