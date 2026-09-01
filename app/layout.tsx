@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import AnalyticsPageView from "@/components/analytics/AnalyticsPageView";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import ResponsiveNav from "@/components/layout/ResponsiveNav";
 import "./globals.css";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -81,6 +83,8 @@ export default function RootLayout({
       className={`${mackinac.variable} ${commissioner.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans text-alic-navy">
+        <GoogleAnalytics />
+        <AnalyticsPageView />
         <ResponsiveNav />
         {children}
         <SiteFooter />
