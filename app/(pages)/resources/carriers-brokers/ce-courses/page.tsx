@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Continuing Education Courses | ALIC Group Solutions — Atlanta Life Insurance Company",
   description:
-    "Atlanta Life offers certified continuing education courses for brokers and financial industry professionals — practical, relevant, and designed to strengthen your expertise.",
+    "Atlanta Life Insurance Company offers certified continuing education opportunities for brokers, agents, and financial industry professionals in workplace health, productivity, disability management, and group benefits.",
 };
 
 export default function CeCoursesPage() {
@@ -18,9 +18,12 @@ export default function CeCoursesPage() {
       <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-[640px] text-center">
           <p className="font-sans text-base leading-relaxed text-alic-navy/85">
-            Atlanta Life offers certified continuing education opportunities for
-            brokers, agents, and financial industry professionals in workplace
-            health, productivity, disability management, and group benefits.
+            Atlanta Life Insurance Company offers certified continuing education
+            opportunities for brokers, agents, and financial industry
+            professionals — designed to deepen expertise in workplace health,
+            productivity, disability management, and the evolving landscape of
+            group benefits. Courses are available in both in-person and virtual
+            formats.
           </p>
         </div>
 

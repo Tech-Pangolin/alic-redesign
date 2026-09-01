@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export type ContentArticleCardProps = {
@@ -7,6 +8,8 @@ export type ContentArticleCardProps = {
   date: string;
   href: string;
   headerColor: string;
+  imageSrc?: string;
+  imageAlt?: string;
   variant?: "light" | "dark";
   linkLabel?: string;
   className?: string;
@@ -19,6 +22,8 @@ export default function ContentArticleCard({
   date,
   href,
   headerColor,
+  imageSrc,
+  imageAlt = "",
   variant = "light",
   linkLabel = "View article",
   className = "",
@@ -36,8 +41,17 @@ export default function ContentArticleCard({
       <Link href={href} className="block" aria-hidden="true" tabIndex={-1}>
         <div
           className="relative h-36 w-full shrink-0"
-          style={{ backgroundColor: headerColor }}
+          style={imageSrc ? undefined : { backgroundColor: headerColor }}
         >
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt || title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          ) : null}
           <div className="absolute inset-x-0 bottom-0 h-1 bg-alic-gold" />
         </div>
       </Link>

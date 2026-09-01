@@ -27,6 +27,7 @@ const featuredItems = [
     date: post.date,
     href: `/solutions/livebalanced-studio/blog/${post.id}`,
     headerColor: LB_BLOG_COLOR,
+    imageSrc: post.imageSrc,
   })),
   ...conferenceArticles.map((article) => ({
     category: article.category,
@@ -250,6 +251,7 @@ export default function LiveBalancedStudioPage() {
                 date={post.date}
                 href={`/solutions/livebalanced-studio/blog/${post.id}`}
                 headerColor={LB_BLOG_COLOR}
+                imageSrc={post.imageSrc}
                 variant="dark"
                 linkLabel="Read more"
               />

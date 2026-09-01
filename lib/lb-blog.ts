@@ -11,6 +11,7 @@ export type LbBlogPost = {
   date: string;
   author: string;
   sourceUrl: string;
+  imageSrc: string;
   sections: LbBlogSection[];
 };
 
@@ -28,6 +29,7 @@ export const lbBlogPosts: LbBlogPost[] = [
     author: "Dr. Kristin Tugman",
     sourceUrl:
       "https://www.tugmanconsulting.com/post/burnout-at-an-all-time-high-why-psychological-safety-is-the-key-to-saving-america-s-workforce",
+    imageSrc: "/lb/burnout.png",
     sections: [
       {
         heading: "The Burnout Crisis in 2025–2026",
@@ -80,6 +82,7 @@ export const lbBlogPosts: LbBlogPost[] = [
     author: "Dr. Kristin Tugman",
     sourceUrl:
       "https://www.tugmanconsulting.com/post/stress-in-america-how-workers-can-care-for-themselves-and-how-employers-must-step-up",
+    imageSrc: "/lb/stress.png",
     sections: [
       {
         paragraphs: [
@@ -139,6 +142,7 @@ export const lbBlogPosts: LbBlogPost[] = [
     author: "Dr. Kristin Tugman",
     sourceUrl:
       "https://www.tugmanconsulting.com/post/healthcare-costs-as-a-workforce-crisis-why-employers-must-act-now",
+    imageSrc: "/lb/healthcare.png",
     sections: [
       {
         paragraphs: [
@@ -183,6 +187,7 @@ export const lbBlogPosts: LbBlogPost[] = [
     date: "April 25, 2025",
     author: "Dr. Kristin Tugman",
     sourceUrl: "https://www.tugmanconsulting.com/post/gen-z-in-the-workplace",
+    imageSrc: "/lb/genz.png",
     sections: [
       {
         paragraphs: [
@@ -219,6 +224,7 @@ export const lbBlogPosts: LbBlogPost[] = [
     date: "April 7, 2025",
     author: "Dr. Kristin Tugman",
     sourceUrl: "https://www.tugmanconsulting.com/post/the-7-step-model",
+    imageSrc: "/lb/model.png",
     sections: [
       {
         paragraphs: [
