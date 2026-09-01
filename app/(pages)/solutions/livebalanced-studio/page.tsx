@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import ContentArticleCard from "@/components/shared/ContentArticleCard";
 import SignupForm from "@/components/shared/SignupForm";
 import Carousel from "@/components/ui/Carousel";
+import { getAllLbBlogPosts, LB_BLOG_COLOR } from "@/lib/lb-blog";
+import {
+  CATEGORY_COLORS,
+  getConferenceArticles,
+} from "@/lib/newsroom";
 
 export const metadata: Metadata = {
   title:
@@ -9,18 +16,26 @@ export const metadata: Metadata = {
     "LiveBalanced™ Studio is Atlanta Life's wellness content hub — home to the Executive Brief newsletter, expert-led MasterClass sessions, Focus Groups, and the LB Blog.",
 };
 
-const featured = [
-  "Featured content one",
-  "Featured content two",
-  "Featured content three",
-  "Featured content four",
-];
+const blogPosts = getAllLbBlogPosts();
+const conferenceArticles = getConferenceArticles();
 
-const blogPosts = [
-  "Blog post one",
-  "Blog post two",
-  "Blog post three",
-  "Blog post four",
+const featuredItems = [
+  ...blogPosts.slice(0, 2).map((post) => ({
+    category: post.category,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: post.date,
+    href: `/solutions/livebalanced-studio/blog/${post.id}`,
+    headerColor: LB_BLOG_COLOR,
+  })),
+  ...conferenceArticles.map((article) => ({
+    category: article.category,
+    title: article.title,
+    excerpt: article.excerpt,
+    date: article.date,
+    href: `/about/newsroom/${article.id}`,
+    headerColor: CATEGORY_COLORS[article.category],
+  })),
 ];
 
 function ComingSoon() {
@@ -46,22 +61,13 @@ export default function LiveBalancedStudioPage() {
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 md:px-10 md:py-16">
         <Carousel label="Featured content" dark>
-          {featured.map((title) => (
-            <article
-              key={title}
-              className="flex w-80 shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-alic-cream/15 bg-alic-navy"
-            >
-              <div className="h-44 w-full bg-alic-cream/10" aria-hidden="true" />
-              <div className="flex flex-1 flex-col p-6">
-                <span className="font-sans text-xs font-semibold uppercase tracking-wide text-alic-gold">
-                  Featured
-                </span>
-                <h3 className="mt-2 font-serif text-lg font-normal">{title}</h3>
-                <p className="mt-2 flex-1 font-sans text-sm text-alic-cream/70">
-                  Featured content to be populated as it is published.
-                </p>
-              </div>
-            </article>
+          {featuredItems.map((item) => (
+            <ContentArticleCard
+              key={item.href}
+              {...item}
+              variant="dark"
+              className="w-80 shrink-0 snap-start"
+            />
           ))}
         </Carousel>
       </section>
@@ -141,6 +147,15 @@ export default function LiveBalancedStudioPage() {
             podcast-style format designed to inform, challenge, and inspire the
             professionals doing this work every day.
           </p>
+          <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
+            <Image
+              src="/lb/focusgroup.png"
+              alt="LiveBalanced MasterClass session"
+              fill
+              sizes="(max-width: 1152px) 100vw, 1152px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -152,52 +167,69 @@ export default function LiveBalancedStudioPage() {
             </h2>
             <ComingSoon />
           </div>
-          <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-alic-cream/80">
-            <p>
-              LiveBalanced&trade; Focus Groups are live, expert-led sessions
-              open to the public — bringing professionals together around the
-              wellness topics that matter most to the organizations and
-              communities we serve. Each session is an opportunity to learn,
-              engage, and connect with others navigating the same challenges.
-            </p>
-            <p>
-              Focus groups are open to all. Sign up below to be notified when
-              sessions are scheduled and to reserve your spot.
-            </p>
-          </div>
-          <div className="mx-auto mt-10 w-full rounded-2xl bg-alic-navy p-8 md:max-w-[calc(50%-1.25rem)]">
-            <SignupForm
-              dark
-              formName="LiveBalanced Studio — Focus Groups"
-              buttonText="Sign up"
-              fields={[
-                {
-                  name: "firstName",
-                  label: "First name",
-                  required: true,
-                  autoComplete: "given-name",
-                },
-                {
-                  name: "lastName",
-                  label: "Last name",
-                  required: true,
-                  autoComplete: "family-name",
-                },
-                {
-                  name: "email",
-                  label: "Email address",
-                  type: "email",
-                  required: true,
-                  autoComplete: "email",
-                },
-                {
-                  name: "organization",
-                  label: "Organization",
-                  autoComplete: "organization",
-                },
-                { name: "role", label: "Role", autoComplete: "organization-title" },
-              ]}
-            />
+          <div className="mt-10 grid grid-cols-1 items-start gap-10 md:grid-cols-2">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/lb/masterclass.png"
+                alt="LiveBalanced Focus Group session"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <div className="space-y-4 font-sans text-base leading-relaxed text-alic-cream/80">
+                <p>
+                  LiveBalanced&trade; Focus Groups are live, expert-led sessions
+                  open to the public — bringing professionals together around the
+                  wellness topics that matter most to the organizations and
+                  communities we serve. Each session is an opportunity to learn,
+                  engage, and connect with others navigating the same challenges.
+                </p>
+                <p>
+                  Focus groups are open to all. Sign up below to be notified when
+                  sessions are scheduled and to reserve your spot.
+                </p>
+              </div>
+              <div className="mt-8 rounded-2xl bg-alic-navy p-8">
+                <SignupForm
+                  dark
+                  formName="LiveBalanced Studio — Focus Groups"
+                  buttonText="Sign up"
+                  fields={[
+                    {
+                      name: "firstName",
+                      label: "First name",
+                      required: true,
+                      autoComplete: "given-name",
+                    },
+                    {
+                      name: "lastName",
+                      label: "Last name",
+                      required: true,
+                      autoComplete: "family-name",
+                    },
+                    {
+                      name: "email",
+                      label: "Email address",
+                      type: "email",
+                      required: true,
+                      autoComplete: "email",
+                    },
+                    {
+                      name: "organization",
+                      label: "Organization",
+                      autoComplete: "organization",
+                    },
+                    {
+                      name: "role",
+                      label: "Role",
+                      autoComplete: "organization-title",
+                    },
+                  ]}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -208,28 +240,19 @@ export default function LiveBalancedStudioPage() {
           <p className="mt-3 font-sans text-base text-alic-cream/80">
             Perspectives on wellness from the experts driving the work.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {blogPosts.map((title) => (
-              <article
-                key={title}
-                className="flex flex-col overflow-hidden rounded-2xl border border-alic-cream/15 bg-alic-navy"
-              >
-                <div className="h-36 w-full bg-alic-cream/10" aria-hidden="true" />
-                <div className="flex flex-1 flex-col p-5">
-                  <span className="font-sans text-xs font-semibold uppercase tracking-wide text-alic-gold">
-                    Category
-                  </span>
-                  <h3 className="mt-2 font-serif text-base font-normal">
-                    {title}
-                  </h3>
-                  <p className="mt-2 flex-1 font-sans text-sm text-alic-cream/70">
-                    Content to be provided and inserted here.
-                  </p>
-                  <span className="mt-3 font-sans text-sm font-semibold text-alic-gold">
-                    Read more →
-                  </span>
-                </div>
-              </article>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {blogPosts.map((post) => (
+              <ContentArticleCard
+                key={post.id}
+                category={post.category}
+                title={post.title}
+                excerpt={post.excerpt}
+                date={post.date}
+                href={`/solutions/livebalanced-studio/blog/${post.id}`}
+                headerColor={LB_BLOG_COLOR}
+                variant="dark"
+                linkLabel="Read more"
+              />
             ))}
           </div>
         </div>

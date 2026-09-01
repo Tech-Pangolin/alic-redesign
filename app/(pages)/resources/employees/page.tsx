@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import ArticleGrid, { type Article } from "@/components/shared/ArticleCard";
+import ArticleGrid from "@/components/shared/ArticleCard";
 import PageHeader from "@/components/shared/PageHeader";
+import {
+  getArticlesByAudience,
+  getResourceArticlePath,
+} from "@/lib/resources";
 
 export const metadata: Metadata = {
   title: "Employee Resources | ALIC Group Solutions — Atlanta Life Insurance Company",
@@ -8,45 +12,13 @@ export const metadata: Metadata = {
     "Practical tools and guidance for employees — from navigating open enrollment and understanding your benefits to financial wellness and workplace mental health resources.",
 };
 
-const articles: Article[] = [
-  {
-    category: "Benefits",
-    title: "How to Navigate Open Enrollment",
-    description:
-      "Open enrollment can feel overwhelming. Here is a straightforward guide to understanding your options, asking the right questions, and making decisions that work for you.",
-  },
-  {
-    category: "Benefits",
-    title: "How to Evaluate Your Benefits Package When Starting a New Job",
-    description:
-      "A new job comes with a lot of decisions. Knowing what to look for in a benefits package — and what questions to ask — can make a significant difference in the long run.",
-  },
-  {
-    category: "Mental Health",
-    title:
-      "What to Do When You Are Experiencing a Mental Health Challenge at Work",
-    description:
-      "Mental health challenges affect people across every industry and every role. Here is practical guidance on understanding your options and accessing the support available to you.",
-  },
-  {
-    category: "Workplace",
-    title: "What Return to Work Looks Like After a Leave of Absence",
-    description:
-      "Returning to work after medical, family, or mental health leave is a transition that requires planning and support. Here is what to expect and how to prepare.",
-  },
-  {
-    category: "Insurance",
-    title: "Understanding Your Life Insurance Benefits",
-    description:
-      "Life insurance is one of the most important benefits your employer can offer — and one of the least understood. Here is what your coverage means and why it matters.",
-  },
-  {
-    category: "Financial Wellness",
-    title: "Financial Wellness Basics — What Every Employee Should Know",
-    description:
-      "From managing day-to-day expenses to planning for the future, financial wellness starts with understanding the fundamentals. Here is where to begin.",
-  },
-];
+const articles = getArticlesByAudience("employees").map((article) => ({
+  key: article.id,
+  category: article.category,
+  title: article.title,
+  description: article.excerpt,
+  href: getResourceArticlePath(article),
+}));
 
 export default function EmployeesResourcesPage() {
   return (

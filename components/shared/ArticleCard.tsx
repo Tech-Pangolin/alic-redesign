@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export type Article = {
+  key?: string;
   category: string;
   title: string;
   description: string;
@@ -38,7 +39,7 @@ export default function ArticleGrid({ articles }: { articles: Article[] }) {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {articles.map((article) => (
-        <ArticleCard key={article.title} {...article} />
+        <ArticleCard key={article.key ?? article.href ?? article.title} {...article} />
       ))}
     </div>
   );

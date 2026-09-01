@@ -102,24 +102,28 @@ const digitalPartners: {
   name: string;
   logo: string;
   description: string;
+  href: string;
   logoClassName?: string;
   contentClassName?: string;
 }[] = [
   {
     name: "Mellie",
     logo: "/partners/mellie-logo.png",
+    href: "https://www.mellie.com/",
     description:
       "Mellie is a caregiving support platform that helps family caregivers plan, manage, and coordinate care for older adults and loved ones with special needs. Through personalized care plans, dedicated care coordinators, and an easy-to-use app, Mellie gives employees the support they need to navigate one of life's most demanding responsibilities.",
   },
   {
     name: "Goodpath",
     logo: "/partners/goodpath-logo.png",
+    href: "https://www.goodpath.com/",
     description:
       "Goodpath is a whole-person care platform that delivers personalized, clinically supported programs for chronic conditions — including musculoskeletal pain, mental health, sleep, and digestive health. By addressing the full health picture rather than isolated symptoms, Goodpath helps employees feel better and organizations perform stronger.",
   },
   {
     name: "Express Wages",
     logo: "/partners/express-wages-logo.png",
+    href: "https://www.expresswages.com/",
     logoClassName: "h-32 w-full max-w-xs -translate-y-[5px]",
     contentClassName: "-mt-8",
     description:
@@ -319,6 +323,14 @@ export default function LiveBalancedPage() {
                 <p className="mt-2 font-sans text-sm leading-relaxed text-alic-navy/80">
                   {partner.description}
                 </p>
+                <a
+                  href={partner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 font-sans text-sm font-semibold text-alic-navy transition-colors hover:text-alic-gold"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </a>
               </div>
             </div>
           ))}

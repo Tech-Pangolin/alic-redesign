@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-// import Link from "next/link";
-import ArticleGrid, { type Article } from "@/components/shared/ArticleCard";
+import Link from "next/link";
+import ArticleGrid from "@/components/shared/ArticleCard";
 import PageHeader from "@/components/shared/PageHeader";
+import {
+  getArticlesByAudience,
+  getResourceArticlePath,
+} from "@/lib/resources";
 
 export const metadata: Metadata = {
   title: "Carrier & Broker Resources | ALIC Group Solutions — Atlanta Life Insurance Company",
@@ -9,27 +13,13 @@ export const metadata: Metadata = {
     "Educational resources for carriers, brokers, and financial industry professionals working alongside Atlanta Life.",
 };
 
-const articles: Article[] = [
-  // {
-  //   category: "Education",
-  //   title: "Continuing Education and Why It Matters for Brokers",
-  //   description:
-  //     "The insurance and benefits landscape continues to evolve. Here is why continuing education is one of the most valuable investments a broker can make — and how Atlanta Life supports it.",
-  //   href: "/resources/carriers-brokers/ce-courses",
-  // },
-  {
-    category: "Reinsurance",
-    title: "Understanding Reinsurance Partnerships — What Carriers Should Know",
-    description:
-      "Reinsurance partnerships offer carriers meaningful opportunities to manage risk and expand capacity. Here is what to understand before entering one.",
-  },
-  {
-    category: "Wellness Solutions",
-    title: "How Group Wellness Solutions Strengthen Carrier Relationships",
-    description:
-      "Wellness solutions are becoming an increasingly important part of the group benefits conversation. Here is how carriers and brokers can leverage them to deepen client relationships.",
-  },
-];
+const articles = getArticlesByAudience("carriers-brokers").map((article) => ({
+  key: article.id,
+  category: article.category,
+  title: article.title,
+  description: article.excerpt,
+  href: getResourceArticlePath(article),
+}));
 
 export default function CarriersBrokersResourcesPage() {
   return (
@@ -51,7 +41,7 @@ export default function CarriersBrokersResourcesPage() {
           <ArticleGrid articles={articles} />
         </div>
 
-        {/* <div className="mt-14 flex flex-col items-start gap-4 rounded-2xl border border-alic-navy/10 bg-white p-8 md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 flex flex-col items-start gap-4 rounded-2xl border border-alic-navy/10 bg-white p-8 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="font-serif text-2xl font-normal text-alic-navy">
               Continuing Education Courses
@@ -67,7 +57,7 @@ export default function CarriersBrokersResourcesPage() {
           >
             View CE Courses <span aria-hidden="true">→</span>
           </Link>
-        </div> */}
+        </div>
       </section>
     </main>
   );

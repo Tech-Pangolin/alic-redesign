@@ -1,0 +1,63 @@
+ALIC Group Solutions
+
+   CE Courses -- Page Wireframe
+
+    Resources  Carriers & Brokers  CE Courses
+
+         Atlanta Life Insurance Company | Group Solutions Division
+               Confidential -- For Internal & Site Team Use Only
+                                              August 2026
+CE Courses -- Page Wireframe
+
+Resources  Carriers & Brokers  Continuing Education Courses
+
+LOGO  About               Solutions                      Resources                                           Standard nav bar Partner with us
+
+                    Continuing Education Courses                                                             Page title only (white, bold)
+
+Standard picture header · Title only · No category label or subheadline
+
+                          Short blurb -- Atlanta Life offers certified continuing education opportunities for brokers, agents,
+
+                                                                                                                                                                              Blurb block (centered, max ~640px)
+
+               and financial industry professionals in workplace health, productivity, disability management, and group benefits.
+
+                                                          Upcoming                Past                       Toggle: Upcoming / Past
+                                                                                                              Active = navy fill; inactive = white
+Showing upcoming courses                                                                                      Clicking toggles visible course cards
+
+                                                                                                             Dynamic label updates with toggle
+
+UPCOMING · VIRTUAL WEBINAR                                UPCOMING · PLACEHOLDER                                                  Upcoming course card:
+                                                          Course title                                      UPCOMING · PLACEHOLDER
+Psychological Safety as a
+Disability Management Strategy                                                                                                      Gold top border accent
+                                                                                                            Course title Badge · Title · Date/Time
+Oct 6, 2026 | 9 AM PT / 12 PM ET
+Dr. Kristin Tugman -- Atlanta Life                                                                          Presenter · Host
+Hosted by DMEC
+                                                          Course details appear here as new CE opportunities are cCoonufirsmeedeatanidlsaadpDdpeedsac.riphteioren as new CE opportunities are confirmed a
+How psychological safety impacts disability manageme...
+                                                                                                            CEU credits (gray bg box)
+
+                                                                                                            Register now  button (navy)
+
+                                                                                                             Placeholder card (dashed border)
+
+                                                                                                            Populates as new courses added
+
+CEUs: 1 ADMS · 1 CDMS · 1 CLMS · 1 PHR · 1 CPDM · 1 SHRM
+
+Register now 
+
+Past tab -- empty state
+
+                                                                                                                                                                                         Past tab currently empty
+
+When Past is selected and no past courses exist, the grid shows an empty state message: "No past courses yet." Cards populate as courses complete
+
+                                                          Atlanta Life Insurance Company | Standard Footer   Standard site footer
+
+                                                                                        ALIC Group Solutions | CE Courses Page Wireframe | Confidential
+

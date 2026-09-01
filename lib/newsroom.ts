@@ -540,3 +540,9 @@ export function getAllArticles(): NewsroomArticle[] {
 export function getArticle(slug: string): NewsroomArticle | undefined {
   return newsroomArticles.find((article) => article.id === slug);
 }
+
+export function getConferenceArticles(): NewsroomArticle[] {
+  return newsroomArticles.filter(
+    (article) => article.category === "Conferences & Industry",
+  );
+}
