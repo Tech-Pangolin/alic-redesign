@@ -38,7 +38,7 @@ export default function Hero() {
 
         <div className={styles.column3}>
           <Reveal delay={220}>
-            <Link href="#foundation" className={styles.cta}>
+            <Link href="/about/our-story" className={styles.cta}>
               See What Drives Us
               <span aria-hidden="true">↗</span>
             </Link>

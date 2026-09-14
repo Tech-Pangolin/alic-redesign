@@ -38,6 +38,10 @@ const navGroups: NavGroup[] = [
             { label: "Employees", href: "/resources/employees" },
             { label: "Employers", href: "/resources/employers" },
             { label: "Carriers & Brokers", href: "/resources/carriers-brokers" },
+            {
+                label: "Continuing Education",
+                href: "/resources/carriers-brokers/ce-courses",
+            },
         ],
     },
 ];

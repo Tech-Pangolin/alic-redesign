@@ -7,6 +7,7 @@ export default function NewsroomArticleCard({
   title,
   excerpt,
   date,
+  heroImage,
 }: NewsroomArticle) {
   return (
     <ContentArticleCard
@@ -16,6 +17,7 @@ export default function NewsroomArticleCard({
       date={date}
       href={`/about/newsroom/${id}`}
       headerColor={CATEGORY_COLORS[category]}
+      imageSrc={heroImage}
       variant="light"
     />
   );

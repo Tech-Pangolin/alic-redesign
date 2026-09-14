@@ -43,7 +43,7 @@ export default function Foundation() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={220}>
+          <Reveal delay={220} className={styles.ctaWrap}>
             <Link href="#work" className={styles.cta}>
               See What Drives Us
               <span aria-hidden="true">↗</span>

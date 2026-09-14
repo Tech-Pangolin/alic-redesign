@@ -150,7 +150,7 @@ export default function LiveBalancedStudioPage() {
           </p>
           <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
             <Image
-              src="/lb/focusgroup.png"
+              src="/lb/masterclass.png"
               alt="LiveBalanced MasterClass session"
               fill
               sizes="(max-width: 1152px) 100vw, 1152px"
@@ -171,7 +171,7 @@ export default function LiveBalancedStudioPage() {
           <div className="mt-10 grid grid-cols-1 items-start gap-10 md:grid-cols-2">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
               <Image
-                src="/lb/masterclass.png"
+                src="/lb/focusgroup.png"
                 alt="LiveBalanced Focus Group session"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

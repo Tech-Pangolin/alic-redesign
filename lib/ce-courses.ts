@@ -28,20 +28,6 @@ export const ceCourses: CeCourse[] = [
     ceuCredits: "1 ADMS · 1 CDMS · 1 CLMS · 1 PHR · 1 CPDM · 1 SHRM",
     registerUrl: "#",
   },
-  {
-    id: "upcoming-placeholder-1",
-    status: "upcoming",
-    format: "Upcoming · Placeholder",
-    title: "Course title",
-    isPlaceholder: true,
-  },
-  {
-    id: "upcoming-placeholder-2",
-    status: "upcoming",
-    format: "Upcoming · Placeholder",
-    title: "Course title",
-    isPlaceholder: true,
-  },
 ];
 
 export function getCoursesByStatus(status: CeCourseStatus): CeCourse[] {

@@ -40,7 +40,7 @@ export default function ContentArticleCard({
     >
       <Link href={href} className="block" aria-hidden="true" tabIndex={-1}>
         <div
-          className="relative h-36 w-full shrink-0"
+          className="relative h-20 w-full shrink-0"
           style={imageSrc ? undefined : { backgroundColor: headerColor }}
         >
           {imageSrc ? (

@@ -12,6 +12,9 @@ export default function NewsroomArticleView({
 }) {
   const headerColor = CATEGORY_COLORS[article.category];
   const meta = [article.date, article.location].filter(Boolean).join(" · ");
+  const gallery = article.galleryImages ?? [];
+  const videos = article.videos ?? [];
+  const hasMedia = gallery.length > 0 || videos.length > 0;
 
   return (
     <article className="bg-alic-cream">
@@ -25,7 +28,7 @@ export default function NewsroomArticleView({
       </div>
 
       <div className="mx-auto mt-6 w-full max-w-6xl px-6 md:px-10">
-        <div className="relative h-40 w-full overflow-hidden rounded-2xl md:h-48">
+        <div className="relative h-24 w-full overflow-hidden rounded-2xl md:h-28">
           {article.heroImage ? (
             <Image
               src={article.heroImage}
@@ -82,6 +85,50 @@ export default function NewsroomArticleView({
             </section>
           ))}
         </div>
+
+        {hasMedia ? (
+          <div className="mt-14 space-y-8 border-t border-alic-navy/10 pt-10">
+            <h2 className="font-serif text-2xl font-normal text-alic-navy">
+              Media
+            </h2>
+            {gallery.length > 0 ? (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {gallery.map((src) => (
+                  <div
+                    key={src}
+                    className="relative aspect-[4/3] overflow-hidden rounded-xl"
+                  >
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 384px"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
+            {videos.length > 0 ? (
+              <div className="space-y-4">
+                {videos.map((src) => (
+                  <div
+                    key={src}
+                    className="relative aspect-video overflow-hidden rounded-xl bg-alic-navy/5"
+                  >
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 h-full w-full object-cover"
+                      src={src}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
 
         <div className="mt-14 border-t border-alic-navy/10 pt-8">
           <Link
