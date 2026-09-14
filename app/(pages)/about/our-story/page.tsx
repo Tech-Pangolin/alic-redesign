@@ -176,17 +176,7 @@ export default function OurStoryPage() {
         </Collapsible>
 
         <Collapsible id="legacy-today" title="Legacy Today" defaultOpen>
-          <div className="flow-root">
-            <div className="relative mb-4 w-full max-w-sm min-h-[14rem] overflow-hidden rounded-2xl md:float-right md:mb-4 md:ml-8 md:max-w-md md:min-h-[17rem]">
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 h-full w-full object-cover"
-                src="/ourStory/Atlanta%20Life%20Insurance%20Company_%20Honoring%20a%20Legacy,%20Building%20the%20Future.mp4"
-              />
-            </div>
-
+          <div>
             <div className={textClass}>
               <p>
                 Atlanta Life Insurance Company has operated continuously since 1905
@@ -223,6 +213,15 @@ export default function OurStoryPage() {
                 The name has endured. The mission has endured. And the work — over
                 a century in — continues.
               </p>
+            </div>
+            <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-2xl">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/ourStory/Atlanta%20Life%20Insurance%20Company_%20Honoring%20a%20Legacy,%20Building%20the%20Future.mp4"
+              />
             </div>
           </div>
         </Collapsible>

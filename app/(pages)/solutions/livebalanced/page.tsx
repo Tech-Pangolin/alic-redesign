@@ -350,7 +350,7 @@ export default function LiveBalancedPage() {
               Partner with us <span aria-hidden="true">→</span>
             </Link>
             <Link
-              href="#our-approach"
+              href="/solutions/reinsurance#how-it-works-at-atlanta-life"
               className="inline-flex items-center justify-center gap-3 rounded-full border border-alic-cream/40 px-8 py-4 font-sans text-lg font-semibold text-alic-cream transition-colors hover:bg-alic-cream/10"
             >
               Learn how it works <span aria-hidden="true">→</span>

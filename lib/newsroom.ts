@@ -22,6 +22,8 @@ export type NewsroomArticle = {
   tags?: string[];
   sections: ArticleSection[];
   heroImage?: string;
+  galleryImages?: string[];
+  videos?: string[];
 };
 
 export const CATEGORY_COLORS: Record<NewsroomCategory, string> = {
@@ -42,9 +44,22 @@ export const newsroomArticles: NewsroomArticle[] = [
       "Pearls of Purpose Foundation — Mother & Daughter Scholarship Luncheon",
     excerpt:
       "Atlanta Life sponsored this celebration of legacy and scholarship honoring the bonds between mothers and daughters.",
-    date: "Date TBD",
+    date: "August 2026",
     location: "Location TBD",
     tags: ["Event Recap", "Community"],
+    heroImage: "/newsroom/pearls-of-purpose/01.jpg",
+    galleryImages: [
+      "/newsroom/pearls-of-purpose/01.jpg",
+      "/newsroom/pearls-of-purpose/02.jpg",
+      "/newsroom/pearls-of-purpose/03.jpg",
+      "/newsroom/pearls-of-purpose/04.jpg",
+      "/newsroom/pearls-of-purpose/05.jpg",
+      "/newsroom/pearls-of-purpose/06.jpg",
+      "/newsroom/pearls-of-purpose/07.jpg",
+      "/newsroom/pearls-of-purpose/08.jpg",
+      "/newsroom/pearls-of-purpose/09.jpg",
+      "/newsroom/pearls-of-purpose/10.jpg",
+    ],
     sections: [
       {
         paragraphs: [
@@ -86,6 +101,21 @@ export const newsroomArticles: NewsroomArticle[] = [
     location:
       "Atlanta, Austin, Aurora, Charlotte, Brooklyn, Denver, Chicago, Nashville, Detroit, Los Angeles, Milwaukee, Phoenix, San Diego",
     tags: ["Event Recap", "Community", "Partnership"],
+    heroImage: "/newsroom/strength-in-the-city/01.jpg",
+    galleryImages: [
+      "/newsroom/strength-in-the-city/01.jpg",
+      "/newsroom/strength-in-the-city/02.jpg",
+      "/newsroom/strength-in-the-city/03.jpg",
+      "/newsroom/strength-in-the-city/04.jpg",
+      "/newsroom/strength-in-the-city/05.jpg",
+      "/newsroom/strength-in-the-city/06.jpg",
+      "/newsroom/strength-in-the-city/07.jpg",
+      "/newsroom/strength-in-the-city/08.jpg",
+      "/newsroom/strength-in-the-city/09.jpg",
+      "/newsroom/strength-in-the-city/10.jpg",
+      "/newsroom/strength-in-the-city/11.jpg",
+      "/newsroom/strength-in-the-city/12.jpg",
+    ],
     sections: [
       {
         paragraphs: [
@@ -134,6 +164,7 @@ export const newsroomArticles: NewsroomArticle[] = [
     date: "2026",
     location: "Atlanta, Georgia",
     tags: ["Event Recap", "Community", "Partnership", "History"],
+    videos: ["/newsroom/sweet-auburn-stories/recap.mp4"],
     sections: [
       {
         paragraphs: [
@@ -243,6 +274,7 @@ export const newsroomArticles: NewsroomArticle[] = [
     date: "April 4, 2026",
     location: "Atlanta, Georgia",
     tags: ["Event Recap", "Community"],
+    videos: ["/newsroom/atlanta-life-at-404-day/recap.mp4"],
     sections: [
       {
         paragraphs: [
@@ -273,9 +305,24 @@ export const newsroomArticles: NewsroomArticle[] = [
     title: "A Conversation Worth Having — Atlanta Life Hosts Author Tayari Jones",
     excerpt:
       "An intimate fireside chat with Oprah's Book Club author Tayari Jones, moderated by Courtney Johnson at Atlanta Life's offices.",
-    date: "Date TBD",
+    date: "August 2026",
     location: "Atlanta, Georgia",
     tags: ["Event Recap", "Community", "Culture"],
+    heroImage: "/newsroom/tayari-jones/01.jpg",
+    galleryImages: [
+      "/newsroom/tayari-jones/01.jpg",
+      "/newsroom/tayari-jones/02.jpg",
+      "/newsroom/tayari-jones/03.jpg",
+      "/newsroom/tayari-jones/04.jpg",
+      "/newsroom/tayari-jones/05.jpg",
+      "/newsroom/tayari-jones/06.jpg",
+      "/newsroom/tayari-jones/07.jpg",
+      "/newsroom/tayari-jones/08.jpg",
+      "/newsroom/tayari-jones/09.jpg",
+      "/newsroom/tayari-jones/10.jpg",
+      "/newsroom/tayari-jones/11.jpg",
+      "/newsroom/tayari-jones/12.jpg",
+    ],
     sections: [
       {
         paragraphs: [
@@ -329,9 +376,24 @@ export const newsroomArticles: NewsroomArticle[] = [
       "Financial Wellness in the Workplace — Atlanta Life at Power Home Remodeling",
     excerpt:
       "Leadership hosted a financial wellness program at campus — equipping teams with tools for stronger financial futures.",
-    date: "Date TBD",
+    date: "August 2026",
     location: "Location TBD",
     tags: ["Corporate & Clients"],
+    heroImage: "/newsroom/power-home-remodeling/01.jpg",
+    galleryImages: [
+      "/newsroom/power-home-remodeling/01.jpg",
+      "/newsroom/power-home-remodeling/02.jpg",
+      "/newsroom/power-home-remodeling/03.jpg",
+      "/newsroom/power-home-remodeling/04.jpg",
+      "/newsroom/power-home-remodeling/05.jpg",
+      "/newsroom/power-home-remodeling/06.jpg",
+      "/newsroom/power-home-remodeling/07.jpg",
+      "/newsroom/power-home-remodeling/08.jpg",
+      "/newsroom/power-home-remodeling/09.jpg",
+      "/newsroom/power-home-remodeling/10.jpg",
+      "/newsroom/power-home-remodeling/11.jpg",
+      "/newsroom/power-home-remodeling/12.jpg",
+    ],
     sections: [
       {
         paragraphs: [
@@ -368,7 +430,7 @@ export const newsroomArticles: NewsroomArticle[] = [
       "Atlanta Life at IBI National Conference — The GenZ Workforce Is Here. Is Corporate America Ready?",
     excerpt:
       "Courtney Johnson, Dr. Tugman, and Trish Payne in Chicago sharing insights on attracting and retaining Gen Z talent.",
-    date: "Date TBD",
+    date: "August 2026",
     location: "Chicago, Illinois",
     tags: ["Conference", "Thought Leadership", "Industry"],
     sections: [
@@ -420,7 +482,7 @@ export const newsroomArticles: NewsroomArticle[] = [
       "Bringing the Conversation Home — Atlanta Life Hosts IBI Regional Conference",
     excerpt:
       "Presentations by Atlanta Life, IBI, and Mellie — plus a Herndon Home tour for conference attendees in Atlanta.",
-    date: "Date TBD",
+    date: "August 2026",
     location: "Atlanta, Georgia",
     tags: ["Conference", "Thought Leadership", "Industry", "Community"],
     sections: [
@@ -545,4 +607,37 @@ export function getConferenceArticles(): NewsroomArticle[] {
   return newsroomArticles.filter(
     (article) => article.category === "Conferences & Industry",
   );
+}
+
+export function getRecentArticles(limit = 3): NewsroomArticle[] {
+  const monthIndex: Record<string, number> = {
+    january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+    july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
+  };
+
+  function parseDate(value: string): number {
+    const normalized = value.trim().toLowerCase();
+    const dayMonthYear = normalized.match(/^([a-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+    if (dayMonthYear) {
+      const month = monthIndex[dayMonthYear[1]] ?? 0;
+      return Number(dayMonthYear[3]) * 10000 + month * 100 + Number(dayMonthYear[2]);
+    }
+    const monthYear = normalized.match(/^([a-z]+)\s+(\d{4})$/);
+    if (monthYear) {
+      const month = monthIndex[monthYear[1]] ?? 0;
+      return Number(monthYear[2]) * 10000 + month * 100;
+    }
+    const yearOnly = normalized.match(/^(\d{4})$/);
+    if (yearOnly) return Number(yearOnly[1]) * 10000;
+    return 0;
+  }
+
+  const withMedia = newsroomArticles.filter(
+    (article) => Boolean(article.heroImage) || Boolean(article.videos?.length),
+  );
+  const pool = withMedia.length >= limit ? withMedia : newsroomArticles;
+
+  return [...pool]
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+    .slice(0, limit);
 }

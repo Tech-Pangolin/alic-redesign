@@ -16,7 +16,7 @@ const offerings = [
     title: "Expert Partnerships",
     body: "We bring leading professionals in workplace wellness alongside our clients — experts whose knowledge shapes stronger programs and drives better outcomes for the people within them.",
     cta: "Meet our Expert Partners",
-    href: "/solutions",
+    href: "/solutions/livebalanced#expert-partners",
     image: "/work/ourWork2.jpg",
     imageLeft: false,
   },
