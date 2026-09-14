@@ -43,5 +43,6 @@ next-env.d.ts
 
 # Oversized media (GitHub 100MB limit) — keep local / host externally
 /local-media/
+/source.zip
 public/newsroom/Tayari Jones/AtlantaLife_TayariJones_V2.mp4
 public/newsroom/tayari-jones/recap.mp4

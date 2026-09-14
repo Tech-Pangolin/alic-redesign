@@ -1,5 +1,5 @@
 import ContentArticleCard from "@/components/shared/ContentArticleCard";
-import { CATEGORY_COLORS, type NewsroomArticle } from "@/lib/newsroom";
+import type { NewsroomArticle } from "@/lib/newsroom";
 
 export default function NewsroomArticleCard({
   id,
@@ -7,7 +7,6 @@ export default function NewsroomArticleCard({
   title,
   excerpt,
   date,
-  heroImage,
 }: NewsroomArticle) {
   return (
     <ContentArticleCard
@@ -16,8 +15,7 @@ export default function NewsroomArticleCard({
       excerpt={excerpt}
       date={date}
       href={`/about/newsroom/${id}`}
-      headerColor={CATEGORY_COLORS[category]}
-      imageSrc={heroImage}
+      headerColor="#11224d"
       variant="light"
     />
   );
