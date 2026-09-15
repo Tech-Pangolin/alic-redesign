@@ -70,6 +70,8 @@ function CeCourseCard({ course }: { course: ReturnType<typeof getCoursesByStatus
         {course.registerUrl ? (
           <Link
             href={course.registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-alic-navy px-6 py-3 font-sans text-sm font-semibold text-alic-cream transition-opacity hover:opacity-90"
           >
             Register now
