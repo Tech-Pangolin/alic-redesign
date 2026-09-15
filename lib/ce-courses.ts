@@ -26,7 +26,8 @@ export const ceCourses: CeCourse[] = [
     description:
       "How psychological safety impacts disability management outcomes — examining how trust, disclosure, and workplace culture shape return-to-work success.",
     ceuCredits: "1 ADMS · 1 CDMS · 1 CLMS · 1 PHR · 1 CPDM · 1 SHRM",
-    registerUrl: "#",
+    registerUrl:
+      "https://dmec.org/conferences-and-webinars/webinars/2026-tools-tactics-webinar-psychological-safety-as-a-disability-management-strategy/",
   },
 ];
 
